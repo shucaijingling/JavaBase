@@ -141,7 +141,7 @@ class Person {
 
    1. 权限修饰符
 
-      java规定的四种权限修饰符：private、public、缺省、protected
+      java规定的四种权限修饰符：private、缺省、protected、public
 
    2. 返回值类型，有返回值 VS 没有返回值
 
@@ -194,7 +194,94 @@ class Person {
 
      ​				修饰类的话，只能使用：缺省、public
 
-总结：java提供了4中权限修饰符来修饰类及类的内部结构，体现类及类的内部结构在被调用时的可见性的大小 
+总结：java提供了4中权限修饰符来修饰类及类的内部结构，体现类及类的内部结构在被调用时的可见性的大小
+
+#### this关键字
+
+1. this:表示当前对象
+2. this()：表示当前对象的构造器
+3. 可以调用的结构：
+   1. this:属性、方法、构造器
+   2. 一般情况下可以省略
+   3. 方法的形参和类的属性同名时，不省略，见名知意，
+```java
+public Boy(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+```
+
+#### java的4个权限修饰符：
+
+1.	private：      同一类下
+1.	缺省：           同一包下
+1.	protected： 不同包
+1.	public：        同一项目下
+
+补充：同一包下，不能命名同名的接口、类。
+
+​			不同的包下，可以命名同名的接口、类。
+
+#### 构造器
+
+1. 构造器的作用
+   1. 创建对象
+   1. 初始化对象信息
+
+2. 使用说明：
+   1. 如果没有显式的定义类的构造器的话，则系统默认提供一个空参的构造器
+   2. 定义构造器的格式：权限修饰符 类名(形参列表) { }
+   3. 一个类中定义的多个构造器，彼此构成重载
+   4. 一旦我们显式的定义了类的构造器之后，系统就不在提供默认的空参构造器
+   5. 一个类中，至少会有一个构造器（不写，就是空参构造）
+   6. 构造器的权限修饰符跟类保持一致
+```java
+public Customer(String f, String l) {
+        this.firstName = f;
+        this.lastName = l;
+    }
+```
+#### 类的属性赋值
+
+赋值方式和顺序
+
+1. 默认初始化（比如int 不赋值，默认初始化0）
+2. 显式初始化
+3. 构造器中初始化
+4. set方法
+
+#### 封装性具体的代码体现
+
+1. 将类的属性私有化，提供公共的get和set方法来获取或设置属性的值
+
+   ```java
+   private String name;
+   
+   private int age;
+   
+   public void setName(String name) {
+           this.name = name;
+       }
+   
+   public String getName() {
+       return name;
+   }
+   
+   public void setAge(int age) {
+       this.age = age;
+   }
+   
+   public int getAge() {
+       return age;
+   }
+
+2. 不对外暴露的私有的方法
+
+3. 单例模式（将构造器私有化）
+
+4. 如果不希望类在包外被调用，可以将类设置为缺省的
+
+
 
 ## 2. 面对对象的三大特征：封装、继承、多态
 
