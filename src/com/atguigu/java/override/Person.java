@@ -7,6 +7,9 @@ public class Person {
     public Person() {
 
     }
+    private void privateMethod() {
+        System.out.println("private");
+    }
 
     public Person(String name, int age) {
         this.name = name;

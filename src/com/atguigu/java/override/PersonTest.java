@@ -7,6 +7,5 @@ public class PersonTest {
         student.eat();
         student.walk(10);
         student.study();
-
     }
 }
