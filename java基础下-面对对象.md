@@ -226,7 +226,7 @@ public Boy(String name, int age) {
 #### java的4个权限修饰符：
 
 1.	private：      同一类下
-1.	缺省：           同一包下
+1.	缺省：           同一包下 
 1.	protected： 不同包
 1.	public：        同一项目下
 
@@ -452,6 +452,366 @@ Person p = new Man();
    1. this(形参列表)：本类重载的其他的构造器
    2. super（形参列表）：调用父类中指定的构造器
 
+### 代码块 -329  
+
+1. 代码块的作用：用来初始化类、对象
+
+2. 代码块如果有修饰的话，只能使用static
+
+3. 分类：静态代码块 VS 非静态代码块
+
+   1. 静态代码块：
+      1. 内部可以有输出语句
+      2. 随着类的加载而执行，而且只执行一次
+      3. 作用：初始化类的信息
+      4. 如果一个类中定义了多个静态代码块，则按照声明的先后顺序执行
+      5. 静态代码块的执行要优先于非静态代码块的执行
+      6. 静态代码块内只能调用静态的属性、静态的方法，不能调用非静态的结构
+   2. 非静态代码块：
+      1. 内部可以有输出语句
+      2. 随着对象的创建而执行
+      3. 每创建一个对象，就执行一次非静态代码块
+      4. 作用：可以在创建对象时，对对象的属性等进行初始化
+      5. 如果一个类中定义了多个非静态代码块，则按照声明的先后顺序执行
+      6. 非静态代码块内可以调用静态的属性、静态的方法，或非静态的属性、非静态的方法
+
+   ```java
+   package com.atguigu.block;
+   
+   public class BlockTest {
+   
+       public static void main(String[] args) {
+           String desc = Person.desc;
+           Person p1 = new Person();
+           Person p2 = new Person();
+           Person p3 = new Person();
+           
+           //输出：：：：：：
+          hello,static block
+   	   hello,block
+   	   hello,block
+   	   hello,block
+   
+       }
+   }
+   
+   class Person {
+       String name;
+       int age;
+       static String desc = "我是一个人";
+   
+       public Person() {
+       }
+   
+       public Person(String name, int age) {
+           this.name = name;
+           this.age = age;
+       }
+       //静态代码块
+       static {
+           System.out.println("hello,static block");
+       }
+       //代码块
+       {
+           System.out.println("hello,block");
+       }
+   
+       //方法
+       public void eat() {
+           System.out.println("吃饭");
+       }
+   
+       public static void info() {
+           System.out.println("static method info");
+       }
+   
+       @Override
+       public String toString() {
+           return "Person{" +
+                   "name='" + name + '\'' +
+                   ", age=" + age +
+                   '}';
+       }
+   }
+   ```
+
+   #### 对属性可以赋值的位置
+
+   1. 默认初始化
+   2. 显式初始化
+   3. 构造器中初始化
+   4. 有了对象以后，可以通过"对象.属性" 或 "对象.方法"的方式，进行赋值
+   5. 在代码块中赋值
+
+### 接口
+
+1. 接口是用interface来定义
+
+2. Java中，接口和类是并列的两个结构
+
+3. 如何定义接口：定义接口中的成员
+
+   1. JDK1.7及以前：只能定义全局常量和抽象方法
+      - 全局常量：public static final 的, 书写时 可以省略不写
+      - 抽象方法：public abstract的
+   2. JDK1.8：除了定义全局常量和抽象方法之外，还可以定义静态方法，默认方法
+
+4. 接口中不能定义构造器！！！ 意味着接口不可以实例化
+
+5. Java开发中，接口通过让类去实现（implement）的方式来使用
+
+   如果实现类覆盖了接口中的所有抽象方法，则此实现类就可以实例化
+
+   如果实现类没有覆盖接口中所有的抽象法，则此实现类仍未一个抽象类
+   
+6. Java类 可以实现多个接口 ---> 弥补了Java单继承性的局限性
+
+   格式：class AA extends BB implement CC,DD,EE
+
+7. 接口与接口之间可以继承，而且可以多继承
+
+8. 接口的具体使用，体现多态性
+
+9. 接口，实际上可以看做是一种规范
+
+#### 接口的使用
+
+1. 接口使用上也满足多态性
+2. 接口，实际上就是定义了一种规范
+3. 开发中，体会面向接口编程！！！
+
+```java
+package com.atguigu.interface2;
+
+public class InterfaceTest2 {
+    public static void main(String[] args) {
+        Computer c = new Computer();
+        //1、创建了接口的非匿名实现类的非匿名对象
+        Flash f = new Flash();
+        System.out.println(1);
+        c.transferData(f);
+
+        //2、创建了接口的非匿名实现类的匿名对象
+        System.out.println(2);
+        c.transferData(new Printer());
+
+        //3、创建了接口的匿名实现类的非匿名对象
+        System.out.println(3);
+        USB u = new USB() {
+            @Override
+            public void start() {
+                System.out.println("usb的匿名实现类  start");
+            }
+
+            @Override
+            public void stop() {
+                System.out.println("usb的匿名实现类   stop");
+            }
+        };
+        c.transferData(u);
+
+        //4、创建了接口的匿名实现类的匿名对象
+        System.out.println(4);
+        c.transferData(new USB() {
+            @Override
+            public void start() {
+                System.out.println("usb的匿名实现类的匿名对象   start");
+            }
+
+            @Override
+            public void stop() {
+                System.out.println("usb的匿名实现类的匿名对象   stop");
+            }
+        });
+    }
+
+
+
+}
+
+interface USB {
+    void start();
+    void stop();
+}
+class Computer {
+    //传输数据
+    public void transferData(USB usb) {
+        usb.start();
+        System.out.println("transfer data on Computer");
+        usb.stop();
+    }
+}
+
+class Flash implements USB {
+
+    @Override
+    public void start() {
+        System.out.println("flash start");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("flash stop");
+    }
+}
+
+class Printer implements USB {
+    @Override
+    public void start() {
+        System.out.println("printer start");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("printer stop");
+    }
+}
+
+```
+
+#### 代理模式
+
+```JAVA
+package com.atguigu.proxy;
+
+import sun.nio.ch.Net;
+
+/**
+ * 代理模式
+ */
+public class NetWorkTest {
+    public static void main(String[] args) {
+        Server server = new Server();
+        ProxyServer proxyServer = new ProxyServer(server);
+        proxyServer.browse();
+    }
+}
+
+interface NetWork {
+    void browse();
+}
+/**
+ * 被代理类
+ */
+class Server implements NetWork {
+    @Override
+    public void browse() {
+        System.out.println("Server browse NetWork");
+    }
+}
+
+/**
+ * 代理类
+ */
+class ProxyServer implements NetWork {
+    private NetWork work;
+
+    public ProxyServer(NetWork work) {
+        this.work = work;
+    }
+
+    public void check() {
+        System.out.println("check before browse");
+    }
+    @Override
+    public void browse() {
+        check();
+        work.browse();
+    }
+
+}
+```
+
+####  工厂模式
+
+```java
+package com.atguigu.factory;
+
+/**
+ * 工厂模式
+ */
+public class FactoryTest {
+    public static void main(String[] args) {
+        AudiFactory audiFactory = new AudiFactory();
+        Audi audi = audiFactory.getCar();
+        audi.run();
+        BYDFactory BYDFactory = new BYDFactory();
+        BYD byd = BYDFactory.getCar();
+        byd.run();
+    }
+}
+//car接口
+interface Car {
+    void run();
+}
+//实现car
+class Audi implements Car {
+    @Override
+    public void run() {
+        System.out.println(1);
+        System.out.println("Audi");
+    }
+}
+class BYD implements Car {
+    @Override
+    public void run() {
+        System.out.println(2);
+        System.out.println("BYD");
+    }
+}
+//工厂接口
+interface CarFactory {
+    Car getCar();
+}
+//工厂类，实现工厂
+//要什么对象就创建什么工厂类去实现工厂接口生产对象
+//实现开闭原则
+class AudiFactory implements CarFactory {
+    @Override
+    public Audi getCar() {
+        return new Audi();
+    }
+}
+
+class BYDFactory implements CarFactory {
+
+    @Override
+    public BYD getCar() {
+        return new BYD();
+    }
+}
+```
+
+
+
+#### 面试题：抽象类与接口有哪些异同
+
+### 内部类：类的内部成员
+
+1. Java中允许将一个类A声明在另一个类B中，则类A就是内部类，类B称为外部类
+
+2. 内部类的分类，成员内部类（静态，非静态） vs  局部内部类（方法内，代码块内，构造器内）
+
+3. 成员内部类：
+
+   一方面，作为外部类的成员
+
+   1. 调用外部类的结构
+   2. 可以被static修饰
+   3. 可以被4种不同的权限修饰
+
+   另一方面，作为一个类:
+
+   1. 类内可以定义属性，方法，构造器等
+   2. 可以被final修饰，表示此类不能被继承。言外之意，不是用final，就可以被继承
+   3. 可以被abstract修饰
+
+4. 关注如下的3个问题
+
+   1. 如何实例化成员内部类的对象
+   2. 如何在成员内部类中区分调用外部类的结构
+   3. 开发中局部内部类的使用
+
 ## 3. 其他关键字：this、super、static、final、abstract、interface、package、import
 
 ## static关键字
@@ -465,4 +825,252 @@ Person p = new Man();
    2. static修饰属性的其他说明：
       1. 静态变量随着类的加载而加载
       2. 静态变量的加载要早于对象的创建
+
+## final 关键字 -338
+
+1. final可以用来修饰的结构：类、方法、变量
+
+2. final用来修饰一个类：此类不能被其他类所继承。
+
+   ​	比如：String类、System类、StringBuffer类
+
+3. final用来修饰方法：不可以被重写
+
+   比如：Object类中getClass()；
+   
+4. final 用来修饰变量：此时的"变量"就称为是一个常量
+
+   1. final修饰属性：可以考虑赋值的位置有：显式初始化、代码块中初始化、构造器中初始化
+
+   2. final修饰局部变量
+
+      ​	尤其是使用final修饰形参时，表明此形参是一个常量。当我们调用此方法时，给常量形参赋一个实参。一旦赋值以后，就只能在方法体内使用此形参，但不能进行重新赋值。
+
+static final  用来修饰属性：全局常量  
+
+#### example1
+
+```JAVA
+package com.atguigu.fina11;
+
+public class SomeThing {
+
+    public int addOne(final int x) {
+//        return x++;    //编译报错
+        return x+1;   //可以实现
+    }
+
+    public static void main(String[] args) {
+        SomeThing someThing = new SomeThing();
+  
+```
+
+#### example2
+
+```java
+package com.atguigu.fina11;
+
+public class Something2 {
+    public static void main(String[] args) {
+        Other other = new Other();
+        new Something2().addOne(other);
+    }
+    public void addOne(final Other o){
+//        o = new Other(); //编译错误
+        o.i++; //o中的属性可以变化
+    }
+}
+class Other {
+    public int i;
+}
+```
+
+
+
+
+# 单例模式
+
+## 懒汉单例
+
+```java
+class  Bank {
+
+    //1.构造私有化
+    private Bank() {
+
+    }
+    //2.内部创建对象
+    private static Bank instance = new Bank();
+
+    //3.提供公共方法获取对象
+    public static Bank getInstance() {
+        return instance;
+    }
+}
+```
+
+
+
+## 饿汉单例
+
+```java
+class Order {
+    //1.私有化构造器
+    private Order() {
+
+    }
+    //2.创建对象，不进行初始化
+    private static Order instance = null;
+
+    //3.创建公共方法获取对象，为空就创建，不为空就返回当前实例
+    public static Order getInstance() {
+        if (instance == null) {
+            instance = new Order();
+        }
+        return instance;
+    }
+}
+```
+
+
+
+# JAVA8
+
+## LAMBDA表达式
+
+### Lambda表达式的使用
+
+1. 举例：（o1,o2）-> Integer.compare(o1,o2);
+2. 格式：
+   1.  ->  ：Lambda操作符 或 箭头操作符
+   2. 左边：lambda形参列表 （其实就是接口中的抽象方法的形参列表）
+   3. 右边：lambda体 （其实就是重写的抽象方法的方法体）
+3. lambda表达式的使用：分为6种
+
+```java
+package com.atguigu.lambda;
+
+import org.testng.annotations.Test;
+
+import java.util.Comparator;
+import java.util.function.Consumer;
+
+public class LambdaTest1 {
+    //语法格式一： 无参，无返回值
+    @Test
+    public void test1() {
+        Runnable r1 = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("语法格式一： 无参，无返回值");
+            }
+        };
+        r1.run();
+
+        Runnable r2 = () -> System.out.println("语法格式一： 无参，无返回值");
+        r2.run();
+    }
+
+    //语法格式二： 需要一个参数，但没有返回值
+    @Test
+    public void test2() {
+        Consumer<String> con1 = new Consumer<String>() {
+            @Override
+            public void accept(String s) {
+                System.out.println(s);
+            }
+        };
+        con1.accept("语法格式二： 需要一个参数，但没有返回值");
+
+        Consumer<String> con2 = (String s) -> System.out.println(s);
+        con2.accept("语法格式二： 需要一个参数，但没有返回值");
+        //方法引用
+        Consumer<String> con3 = System.out::println;
+        con3.accept("语法格式二： 需要一个参数，但没有返回值");
+    }
+
+    //语法格式三： 数据类型可以省略，因为可由编译器推断得出，称为"类型维护"
+    @Test
+    public void test3() {
+        Consumer<String> con2 = (s) -> System.out.println(s);
+        con2.accept("语法格式三： 数据类型可以省略，因为可由编译器推断得出，称为\"类型维护\"");
+    }
+
+    //语法格式四： lambda若只需要一个参数时，参数的小括号可以省略
+    @Test
+    public void test4() {
+        Consumer<String> con2 = s -> System.out.println(s);
+        con2.accept("语法格式四： lambda若只需要一个参数时，参数的小括号可以省略");
+    }
+    //语法格式五： lambda需要两个或以上的参数，多条执行语句，并且可以有返回值
+    @Test
+    public void test5() {
+        Comparator<Integer> com1 = new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                System.out.println(o1);
+                System.out.println(o2);
+                return o1.compareTo(o2);
+            }
+        };
+        System.out.println(com1.compare(12,33));
+
+        Comparator<Integer> com2 = (o1,o2) -> {
+            System.out.println(o1);
+            System.out.println(o2);
+            return o1.compareTo(o2);
+        };
+        System.out.println(com2.compare(22,33));;
+    }
+
+    //语法格式六：当lambda体只有一条语句时，return与大括号若有，都可以省略
+    @Test
+    public void test6() {
+        Comparator<Integer> com1 = (o1,o2) -> {
+            return o1.compareTo(o2);
+        };
+        System.out.println(com1.compare(22,33));
+
+        Comparator<Integer> com2 = (o1,o2) -> o1.compareTo(o2);
+        System.out.println(com1.compare(55,33));
+    }
+}
+```
+
+总结：
+
+- 左边：lambda形参列表的参数类型可以省略（类型推断）：如果lambda形参列表只有一个参数，其一堆（）也可以省略
+- 右边：lambda体应该使用一对{}进行包裹，如果lambda体只有一条执行语句（可能是return语句），可以省略这一对{}和return关键字
+
+4. lambda表达式的本质：作为接口的实例
+5. 如果一个接口中，只声明了一个抽象方法，则此接口就称为函数式接口。我们可以在一个接口上使用@FunctionalInterface注解。这样做可以检查它是否是一个函数式接口。
+6. 所以以前用匿名实现类表示的现在都可以用lambda表达式来写。
+
+## java内置的4大核心函数式接口
+
+1. 消费型接口 Consumer<T>	void accept(T t)
+2. 供给型接口 Supplier<T>        T get()
+3. 函数型接口 Funcrion<T,R>    R  apply(T t)
+4. 断定性接口 Predicate<T>      boolean  test(T t)
+
+![image-20220918233512133](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220918233512133.png)
+
+其他接口
+
+![image-20220919000545416](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220919000545416.png)
+
+## 方法引用
+
+方法引用的使用：
+
+1. 使用情境：当要传递给lambda体的操作，已经有实现的方法了，可以使用方法引用
+2. 方法引用，本质上就是lambda表达式，而lambda表达式作为函数式接口的实例，所以方法引用，也是函数式接口的实例。
+3. 使用格式：  类（或对象）::  方法名
+4. 具体分为如下的三种情况：
+   1.   		对象：：非静态方法
+   2. ​              类：：静态方法
+   3. ​              类：：非静态方法
+5. 方法引用使用的要求：要求接口中的抽象方法的形参列表和返回值类型与方法引用的方法的形参列表和返回值类型相同
+
+
 
