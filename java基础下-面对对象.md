@@ -18,37 +18,41 @@
 #### 类和对象的使用：
 
 ```java
-package com.atguigu.java;
+package com.shucai.java;
 
 public class PersonTest {
-    public static void main(String[] args) {
-        //创建对象，实例化类
-        Person p1 = new Person();
-        //调用结构：属性、方法
-        p1.name = "Tom";
-        p1.isMale = true;
-        System.out.println(p1.name); //Tom
-        p1.eat();          //吃
-        p1.sleep();        //睡
-        p1.talk("Chinese");//说Chinese
-    }
+   public static void main(String[] args) {
+      //创建对象，实例化类
+      Person p1 = new Person();
+      //调用结构：属性、方法
+      p1.name = "Tom";
+      p1.isMale = true;
+      System.out.println(p1.name); //Tom
+      p1.eat();          //吃
+      p1.sleep();        //睡
+      p1.talk("Chinese");//说Chinese
+   }
 
 }
+
 class Person {
-    //属性
-    String name;
-    int age = 1;
-    boolean isMale;
-    //方法
-    public void eat(){
-        System.out.println("吃");
-    }
-    public void sleep(){
-        System.out.println("睡");
-    }
-    public void talk(String language){
-        System.out.println("说" + language);
-    }
+   //属性
+   String name;
+   int age = 1;
+   boolean isMale;
+
+   //方法
+   public void eat() {
+      System.out.println("吃");
+   }
+
+   public void sleep() {
+      System.out.println("睡");
+   }
+
+   public void talk(String language) {
+      System.out.println("说" + language);
+   }
 }
 
 ```
@@ -102,7 +106,7 @@ class Person {
      - 局部变量：加载到栈空间
 
    ```JAVA
-   package com.atguigu.java;
+   package com.shucai.java;
    
    public class UserTest {
    
@@ -476,7 +480,7 @@ Person p = new Man();
       6. 非静态代码块内可以调用静态的属性、静态的方法，或非静态的属性、非静态的方法
 
    ```java
-   package com.atguigu.block;
+   package com.shucai.block;
    
    public class BlockTest {
    
@@ -581,90 +585,91 @@ Person p = new Man();
 3. 开发中，体会面向接口编程！！！
 
 ```java
-package com.atguigu.interface2;
+package com.shucai.interface2;
 
 public class InterfaceTest2 {
-    public static void main(String[] args) {
-        Computer c = new Computer();
-        //1、创建了接口的非匿名实现类的非匿名对象
-        Flash f = new Flash();
-        System.out.println(1);
-        c.transferData(f);
+   public static void main(String[] args) {
+      Computer c = new Computer();
+      //1、创建了接口的非匿名实现类的非匿名对象
+      Flash f = new Flash();
+      System.out.println(1);
+      c.transferData(f);
 
-        //2、创建了接口的非匿名实现类的匿名对象
-        System.out.println(2);
-        c.transferData(new Printer());
+      //2、创建了接口的非匿名实现类的匿名对象
+      System.out.println(2);
+      c.transferData(new Printer());
 
-        //3、创建了接口的匿名实现类的非匿名对象
-        System.out.println(3);
-        USB u = new USB() {
-            @Override
-            public void start() {
-                System.out.println("usb的匿名实现类  start");
-            }
+      //3、创建了接口的匿名实现类的非匿名对象
+      System.out.println(3);
+      USB u = new USB() {
+         @Override
+         public void start() {
+            System.out.println("usb的匿名实现类  start");
+         }
 
-            @Override
-            public void stop() {
-                System.out.println("usb的匿名实现类   stop");
-            }
-        };
-        c.transferData(u);
+         @Override
+         public void stop() {
+            System.out.println("usb的匿名实现类   stop");
+         }
+      };
+      c.transferData(u);
 
-        //4、创建了接口的匿名实现类的匿名对象
-        System.out.println(4);
-        c.transferData(new USB() {
-            @Override
-            public void start() {
-                System.out.println("usb的匿名实现类的匿名对象   start");
-            }
+      //4、创建了接口的匿名实现类的匿名对象
+      System.out.println(4);
+      c.transferData(new USB() {
+         @Override
+         public void start() {
+            System.out.println("usb的匿名实现类的匿名对象   start");
+         }
 
-            @Override
-            public void stop() {
-                System.out.println("usb的匿名实现类的匿名对象   stop");
-            }
-        });
-    }
-
+         @Override
+         public void stop() {
+            System.out.println("usb的匿名实现类的匿名对象   stop");
+         }
+      });
+   }
 
 
 }
 
 interface USB {
-    void start();
-    void stop();
+   void start();
+
+   void stop();
 }
+
 class Computer {
-    //传输数据
-    public void transferData(USB usb) {
-        usb.start();
-        System.out.println("transfer data on Computer");
-        usb.stop();
-    }
+   //传输数据
+   public void transferData(USB usb) {
+      usb.start();
+      System.out.println("transfer data on Computer");
+      usb.stop();
+   }
 }
 
 class Flash implements USB {
 
-    @Override
-    public void start() {
-        System.out.println("flash start");
-    }
+   @Override
+   public void start() {
+      System.out.println("flash start");
+   }
 
-    @Override
-    public void stop() {
-        System.out.println("flash stop");
-    }
+   @Override
+   public void stop() {
+      System.out.println("flash stop");
+   }
 }
 
 class Printer implements USB {
-    @Override
-    public void start() {
-        System.out.println("printer start");
-    }
+   @Override
+   public void start() {
+      System.out.println("printer start");
+   }
 
-    @Override
-    public void stop() {
-        System.out.println("printer stop");
-    }
+   @Override
+   public void stop() {
+      System.out.println("printer stop");
+   }
 }
 
 ```
@@ -672,52 +677,52 @@ class Printer implements USB {
 #### 代理模式
 
 ```JAVA
-package com.atguigu.proxy;
-
-import sun.nio.ch.Net;
+package com.shucai.proxy;
 
 /**
  * 代理模式
  */
 public class NetWorkTest {
-    public static void main(String[] args) {
-        Server server = new Server();
-        ProxyServer proxyServer = new ProxyServer(server);
-        proxyServer.browse();
-    }
+   public static void main(String[] args) {
+      Server server = new Server();
+      ProxyServer proxyServer = new ProxyServer(server);
+      proxyServer.browse();
+   }
 }
 
 interface NetWork {
-    void browse();
+   void browse();
 }
+
 /**
  * 被代理类
  */
 class Server implements NetWork {
-    @Override
-    public void browse() {
-        System.out.println("Server browse NetWork");
-    }
+   @Override
+   public void browse() {
+      System.out.println("Server browse NetWork");
+   }
 }
 
 /**
  * 代理类
  */
 class ProxyServer implements NetWork {
-    private NetWork work;
+   private NetWork work;
 
-    public ProxyServer(NetWork work) {
-        this.work = work;
-    }
+   public ProxyServer(NetWork work) {
+      this.work = work;
+   }
 
-    public void check() {
-        System.out.println("check before browse");
-    }
-    @Override
-    public void browse() {
-        check();
-        work.browse();
-    }
+   public void check() {
+      System.out.println("check before browse");
+   }
+
+   @Override
+   public void browse() {
+      check();
+      work.browse();
+   }
 
 }
 ```
@@ -725,60 +730,65 @@ class ProxyServer implements NetWork {
 ####  工厂模式
 
 ```java
-package com.atguigu.factory;
+package com.shucai.factory;
 
 /**
  * 工厂模式
  */
 public class FactoryTest {
-    public static void main(String[] args) {
-        AudiFactory audiFactory = new AudiFactory();
-        Audi audi = audiFactory.getCar();
-        audi.run();
-        BYDFactory BYDFactory = new BYDFactory();
-        BYD byd = BYDFactory.getCar();
-        byd.run();
-    }
+   public static void main(String[] args) {
+      AudiFactory audiFactory = new AudiFactory();
+      Audi audi = audiFactory.getCar();
+      audi.run();
+      BYDFactory BYDFactory = new BYDFactory();
+      BYD byd = BYDFactory.getCar();
+      byd.run();
+   }
 }
+
 //car接口
 interface Car {
-    void run();
+   void run();
 }
+
 //实现car
 class Audi implements Car {
-    @Override
-    public void run() {
-        System.out.println(1);
-        System.out.println("Audi");
-    }
+   @Override
+   public void run() {
+      System.out.println(1);
+      System.out.println("Audi");
+   }
 }
+
 class BYD implements Car {
-    @Override
-    public void run() {
-        System.out.println(2);
-        System.out.println("BYD");
-    }
+   @Override
+   public void run() {
+      System.out.println(2);
+      System.out.println("BYD");
+   }
 }
+
 //工厂接口
 interface CarFactory {
-    Car getCar();
+   Car getCar();
 }
+
 //工厂类，实现工厂
 //要什么对象就创建什么工厂类去实现工厂接口生产对象
 //实现开闭原则
 class AudiFactory implements CarFactory {
-    @Override
-    public Audi getCar() {
-        return new Audi();
-    }
+   @Override
+   public Audi getCar() {
+      return new Audi();
+   }
 }
 
 class BYDFactory implements CarFactory {
 
-    @Override
-    public BYD getCar() {
-        return new BYD();
-    }
+   @Override
+   public BYD getCar() {
+      return new BYD();
+   }
 }
 ```
 
@@ -851,37 +861,39 @@ static final  用来修饰属性：全局常量
 #### example1
 
 ```JAVA
-package com.atguigu.fina11;
+package com.shucai.fina11;
 
 public class SomeThing {
 
-    public int addOne(final int x) {
+   public int addOne(final int x) {
 //        return x++;    //编译报错
-        return x+1;   //可以实现
-    }
+      return x + 1;   //可以实现
+   }
 
-    public static void main(String[] args) {
-        SomeThing someThing = new SomeThing();
-  
+   public static void main(String[] args) {
+      SomeThing someThing = new SomeThing();
+
 ```
 
 #### example2
 
 ```java
-package com.atguigu.fina11;
+package com.shucai.fina11;
 
 public class Something2 {
-    public static void main(String[] args) {
-        Other other = new Other();
-        new Something2().addOne(other);
-    }
-    public void addOne(final Other o){
+   public static void main(String[] args) {
+      Other other = new Other();
+      new Something2().addOne(other);
+   }
+
+   public void addOne(final Other o) {
 //        o = new Other(); //编译错误
-        o.i++; //o中的属性可以变化
-    }
+      o.i++; //o中的属性可以变化
+   }
 }
+
 class Other {
-    public int i;
+   public int i;
 }
 ```
 
@@ -948,7 +960,7 @@ class Order {
 3. lambda表达式的使用：分为6种
 
 ```java
-package com.atguigu.lambda;
+package com.shucai.lambda;
 
 import org.testng.annotations.Test;
 
@@ -956,84 +968,86 @@ import java.util.Comparator;
 import java.util.function.Consumer;
 
 public class LambdaTest1 {
-    //语法格式一： 无参，无返回值
-    @Test
-    public void test1() {
-        Runnable r1 = new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("语法格式一： 无参，无返回值");
-            }
-        };
-        r1.run();
+   //语法格式一： 无参，无返回值
+   @Test
+   public void test1() {
+      Runnable r1 = new Runnable() {
+         @Override
+         public void run() {
+            System.out.println("语法格式一： 无参，无返回值");
+         }
+      };
+      r1.run();
 
-        Runnable r2 = () -> System.out.println("语法格式一： 无参，无返回值");
-        r2.run();
-    }
+      Runnable r2 = () -> System.out.println("语法格式一： 无参，无返回值");
+      r2.run();
+   }
 
-    //语法格式二： 需要一个参数，但没有返回值
-    @Test
-    public void test2() {
-        Consumer<String> con1 = new Consumer<String>() {
-            @Override
-            public void accept(String s) {
-                System.out.println(s);
-            }
-        };
-        con1.accept("语法格式二： 需要一个参数，但没有返回值");
+   //语法格式二： 需要一个参数，但没有返回值
+   @Test
+   public void test2() {
+      Consumer<String> con1 = new Consumer<String>() {
+         @Override
+         public void accept(String s) {
+            System.out.println(s);
+         }
+      };
+      con1.accept("语法格式二： 需要一个参数，但没有返回值");
 
-        Consumer<String> con2 = (String s) -> System.out.println(s);
-        con2.accept("语法格式二： 需要一个参数，但没有返回值");
-        //方法引用
-        Consumer<String> con3 = System.out::println;
-        con3.accept("语法格式二： 需要一个参数，但没有返回值");
-    }
+      Consumer<String> con2 = (String s) -> System.out.println(s);
+      con2.accept("语法格式二： 需要一个参数，但没有返回值");
+      //方法引用
+      Consumer<String> con3 = System.out::println;
+      con3.accept("语法格式二： 需要一个参数，但没有返回值");
+   }
 
-    //语法格式三： 数据类型可以省略，因为可由编译器推断得出，称为"类型维护"
-    @Test
-    public void test3() {
-        Consumer<String> con2 = (s) -> System.out.println(s);
-        con2.accept("语法格式三： 数据类型可以省略，因为可由编译器推断得出，称为\"类型维护\"");
-    }
+   //语法格式三： 数据类型可以省略，因为可由编译器推断得出，称为"类型维护"
+   @Test
+   public void test3() {
+      Consumer<String> con2 = (s) -> System.out.println(s);
+      con2.accept("语法格式三： 数据类型可以省略，因为可由编译器推断得出，称为\"类型维护\"");
+   }
 
-    //语法格式四： lambda若只需要一个参数时，参数的小括号可以省略
-    @Test
-    public void test4() {
-        Consumer<String> con2 = s -> System.out.println(s);
-        con2.accept("语法格式四： lambda若只需要一个参数时，参数的小括号可以省略");
-    }
-    //语法格式五： lambda需要两个或以上的参数，多条执行语句，并且可以有返回值
-    @Test
-    public void test5() {
-        Comparator<Integer> com1 = new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                System.out.println(o1);
-                System.out.println(o2);
-                return o1.compareTo(o2);
-            }
-        };
-        System.out.println(com1.compare(12,33));
+   //语法格式四： lambda若只需要一个参数时，参数的小括号可以省略
+   @Test
+   public void test4() {
+      Consumer<String> con2 = s -> System.out.println(s);
+      con2.accept("语法格式四： lambda若只需要一个参数时，参数的小括号可以省略");
+   }
 
-        Comparator<Integer> com2 = (o1,o2) -> {
+   //语法格式五： lambda需要两个或以上的参数，多条执行语句，并且可以有返回值
+   @Test
+   public void test5() {
+      Comparator<Integer> com1 = new Comparator<Integer>() {
+         @Override
+         public int compare(Integer o1, Integer o2) {
             System.out.println(o1);
             System.out.println(o2);
             return o1.compareTo(o2);
-        };
-        System.out.println(com2.compare(22,33));;
-    }
+         }
+      };
+      System.out.println(com1.compare(12, 33));
 
-    //语法格式六：当lambda体只有一条语句时，return与大括号若有，都可以省略
-    @Test
-    public void test6() {
-        Comparator<Integer> com1 = (o1,o2) -> {
-            return o1.compareTo(o2);
-        };
-        System.out.println(com1.compare(22,33));
+      Comparator<Integer> com2 = (o1, o2) -> {
+         System.out.println(o1);
+         System.out.println(o2);
+         return o1.compareTo(o2);
+      };
+      System.out.println(com2.compare(22, 33));
+      ;
+   }
 
-        Comparator<Integer> com2 = (o1,o2) -> o1.compareTo(o2);
-        System.out.println(com1.compare(55,33));
-    }
+   //语法格式六：当lambda体只有一条语句时，return与大括号若有，都可以省略
+   @Test
+   public void test6() {
+      Comparator<Integer> com1 = (o1, o2) -> {
+         return o1.compareTo(o2);
+      };
+      System.out.println(com1.compare(22, 33));
+
+      Comparator<Integer> com2 = (o1, o2) -> o1.compareTo(o2);
+      System.out.println(com1.compare(55, 33));
+   }
 }
 ```
 
