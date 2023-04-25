@@ -1,0 +1,11 @@
+<mapper namespace="user">
+
+    <!--sql唯一标识：namespace.id来组成： statementId-->
+    <select id="selectList" resultType="com.shucai.pojo.User">
+        select * from user
+    </select>
+
+    <select id="selectOne" paramType="com.shucai.pojo.User" resultType="com.shucai.pojo.User">
+        select * from user where id = #{id} and username = #{username}
+    </select>
+</mapper>
