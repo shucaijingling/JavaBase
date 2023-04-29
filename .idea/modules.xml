@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/IPersistence.iml" filepath="$PROJECT_DIR$/IPersistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IPersistence/IPersistence.iml" filepath="$PROJECT_DIR$/IPersistence/IPersistence.iml" />
       <module fileurl="file://$PROJECT_DIR$/IPersistence_test.iml" filepath="$PROJECT_DIR$/IPersistence_test.iml" />
       <module fileurl="file://$PROJECT_DIR$/java_base.iml" filepath="$PROJECT_DIR$/java_base.iml" />
     </modules>
