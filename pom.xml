@@ -8,6 +8,7 @@
     <modules>
         <module>IPersistence_test</module>
         <module>IPersistence</module>
+        <module>mybatis_quickstart</module>
     </modules>
 
     <parent>

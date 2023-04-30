@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shucai.dao.IUserDao">
+    <select id="findByCondition" resultType="com.shucai.pojo.User" parameterType="com.shucai.pojo.User">
+        select * from user where id=#{id}
+    </select>
+    <select id="findAll" resultType="com.shucai.pojo.User">
+        select * from user
+    </select>
+
+    <insert id="insert" parameterType="com.shucai.pojo.User">
+        insert into user values (#{id},#{username})
+    </insert>
+
+    <update id="update" parameterType="com.shucai.pojo.User">
+        update user set username = #{username} where id = #{id}
+    </update>
+
+
+    <delete id="delete" parameterType="integer">
+        delete from user where id = #{id]}
+    </delete>
+</mapper>

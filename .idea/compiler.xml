@@ -8,12 +8,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="IPersistence_test" />
+        <module name="mybatis_quickstart" />
         <module name="IPersistence" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="IPersistence" target="17" />
-      <module name="IPersistence_test" target="17" />
       <module name="java_base" target="17" />
     </bytecodeTargetLevel>
   </component>
@@ -21,6 +20,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="IPersistence_test" options="-parameters" />
       <module name="java_base" options="" />
+      <module name="mybatis_quickstart" options="-parameters" />
     </option>
   </component>
 </project>
