@@ -1,23 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.shucai.dao.IUserDao">
+<!--    sql抽取-->
+    <sql id="selectUser">
+        select * from user
+    </sql>
     <select id="findByCondition" resultType="com.shucai.pojo.User" parameterType="com.shucai.pojo.User">
-        select * from user where id=#{id}
+        select * from user
+        <where>
+            <if test="id != null">
+                id = #{id}
+            </if>
+            <if test="username!=null">
+               and username = #{username}
+            </if>
+        </where>
     </select>
     <select id="findAll" resultType="com.shucai.pojo.User">
         select * from user
     </select>
+    <select id="findByIds" resultType="com.shucai.pojo.User">
+        <include refid="selectUser"></include>
+        <where>
+            <foreach collection="ids" item="id" separator="," open="id in (" close=")">
+                #{id}
+            </foreach>
+        </where>
+    </select>
 
-    <insert id="insert" parameterType="com.shucai.pojo.User">
+
+    <insert id="insert" parameterType="user" keyProperty="id" useGeneratedKeys="true">
         insert into user values (#{id},#{username})
     </insert>
 
-    <update id="update" parameterType="com.shucai.pojo.User">
+    <update id="update" parameterType="user">
         update user set username = #{username} where id = #{id}
     </update>
 
 
-    <delete id="delete" parameterType="integer">
-        delete from user where id = #{id]}
+    <delete id="delete" parameterType="int">
+        delete from user where id = #{id}
     </delete>
+
 </mapper>

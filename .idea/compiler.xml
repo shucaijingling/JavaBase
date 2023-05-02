@@ -10,6 +10,7 @@
         <module name="IPersistence_test" />
         <module name="mybatis_quickstart" />
         <module name="IPersistence" />
+        <module name="mybatis_mutitable" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
