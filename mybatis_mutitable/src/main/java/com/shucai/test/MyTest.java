@@ -113,4 +113,12 @@ public class MyTest {
         }
 
     }
+
+    @Test
+    public void testFindUserOrder(){
+        for (User user : IUserMapper.findUserAndRole2()) {
+
+            System.out.println(user);
+        }
+    }
 }

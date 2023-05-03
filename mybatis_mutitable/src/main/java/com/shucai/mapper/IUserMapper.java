@@ -39,4 +39,15 @@ public interface IUserMapper {
             many = @Many(select = "com.shucai.mapper.IOrderMapper.findOrder"))
     })
     public List<User> findAll2();
+
+
+    @Select("select * from user")
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "username", column = "username"),
+            @Result(property = "roleList", column = "id", javaType = List.class,
+                    many=@Many(select = "com.shucai.mapper.IRoleMapper.findRole"))
+
+    })
+    public List<User> findUserAndRole2();
 }
