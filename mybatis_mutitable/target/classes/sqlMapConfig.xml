@@ -7,6 +7,11 @@
     <!--加载外部的properties文件-->
     <properties resource="jdbc.properties"></properties>
 
+    <!--开启二级缓存-->
+    <settings>
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+
     <!--给实体类的全限定类名给别名-->
     <typeAliases>
         <!--给单独的实体起别名-->

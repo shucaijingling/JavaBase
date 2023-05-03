@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
+@CacheNamespace //开启二级缓存
 public interface IUserMapper {
 
     public List<User> findAll();
