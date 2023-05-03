@@ -57,12 +57,14 @@ public class MyTest {
      * 抽取创建sqlsession步骤
      */
     private IUserMapper IUserMapper;
+    private IOrderMapper IOrderMapper;
     @Before
     public void createSqlSession() throws IOException {
         InputStream resourceAsStream = Resources.getResourceAsStream("sqlMapConfig.xml");
         SqlSessionFactory build = new SqlSessionFactoryBuilder().build(resourceAsStream);
         SqlSession sqlSession = build.openSession(true);
         IUserMapper = sqlSession.getMapper(IUserMapper.class);
+        IOrderMapper = sqlSession.getMapper(IOrderMapper.class);
     }
 
     @Test
@@ -95,5 +97,20 @@ public class MyTest {
     public void testAnnoDelete() {
 
         IUserMapper.delete(3);
+    }
+
+    @Test
+    public void testAnnoSelectMuti(){
+        for (Order order : IOrderMapper.findOrderAndUser2()) {
+            System.out.println(order);
+        }
+    }
+
+    @Test
+    public void testAnnoSelectMutiUser(){
+        for (User user : IUserMapper.findAll2()) {
+            System.out.println(user);
+        }
+
     }
 }

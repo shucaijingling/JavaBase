@@ -1,10 +1,7 @@
 package com.shucai.mapper;
 
 import com.shucai.muti.pojo.User;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -30,4 +27,16 @@ public interface IUserMapper {
     public void delete(Integer id);
 
 
+    @Select("select * from user where id = #{id}")
+    public User findById(Integer id);
+
+
+    @Select("select * from user")
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "username", column = "username"),
+            @Result(property = "orderList", column = "id", javaType = List.class,
+            many = @Many(select = "com.shucai.mapper.IOrderMapper.findOrder"))
+    })
+    public List<User> findAll2();
 }
