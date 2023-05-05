@@ -2,16 +2,19 @@ package com.shucai.test;
 
 import com.shucai.mapper.IUserMapper;
 import com.shucai.muti.pojo.User;
+import org.apache.ibatis.annotations.CacheNamespace;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Before;
 import org.junit.Test;
+import org.mybatis.caches.redis.RedisCache;
 
 import java.io.IOException;
 import java.io.InputStream;
 
+@CacheNamespace(implementation = RedisCache.class)
 public class CacheTest {
 
     private SqlSession sqlSession;
