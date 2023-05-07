@@ -116,7 +116,7 @@ public class SqlSessionFactoryBuilder {
      * @return DefaultSqlSessionFactory 对象
      */
     public SqlSessionFactory build(Configuration config) {
-        return new DefaultSqlSessionFactory(config);
+        return new DefaultSqlSessionFactory(config);//构建者模式
     }
 
 }
