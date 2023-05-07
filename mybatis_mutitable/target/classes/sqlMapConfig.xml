@@ -26,8 +26,13 @@
 <!--            <property name="cat" value="tanyuan"/>-->
 <!--        </plugin>-->
         
-        <plugin interceptor="com.github.pagehelper.PageHelper">
-            <property name="dialect" value="mysql"/>
+<!--        <plugin interceptor="com.github.pagehelper.PageHelper">-->
+<!--            <property name="dialect" value="mysql"/>-->
+<!--        </plugin>-->
+
+        <plugin interceptor="tk.mybatis.mapper.mapperhelper.MapperInterceptor">
+            <!--指定当前通用mapper的接口-->
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
         </plugin>
     </plugins>
 

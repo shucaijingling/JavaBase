@@ -4,14 +4,15 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.shucai.mapper.IOrderMapper;
 import com.shucai.mapper.IUserMapper;
+import com.shucai.mapper.UserMapper;
 import com.shucai.muti.pojo.Order;
 import com.shucai.muti.pojo.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-import org.junit.Before;
 import org.junit.Test;
+import tk.mybatis.mapper.entity.Example;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -61,14 +62,14 @@ public class MyTest {
      */
     private IUserMapper iUserMapper;
     private IOrderMapper iOrderMapper;
-    @Before
-    public void createSqlSession() throws IOException {
-        InputStream resourceAsStream = Resources.getResourceAsStream("sqlMapConfig.xml");
-        SqlSessionFactory build = new SqlSessionFactoryBuilder().build(resourceAsStream);
-        SqlSession sqlSession = build.openSession(true);
-        iUserMapper = sqlSession.getMapper(IUserMapper.class);
-        iOrderMapper = sqlSession.getMapper(IOrderMapper.class);
-    }
+//    @Before
+//    public void createSqlSession() throws IOException {
+//        InputStream resourceAsStream = Resources.getResourceAsStream("sqlMapConfig.xml");
+//        SqlSessionFactory build = new SqlSessionFactoryBuilder().build(resourceAsStream);
+//        SqlSession sqlSession = build.openSession(true);
+//        iUserMapper = sqlSession.getMapper(IUserMapper.class);
+//        iOrderMapper = sqlSession.getMapper(IOrderMapper.class);
+//    }
 
     @Test
     public void testAnnoInsert() {
@@ -139,5 +140,27 @@ public class MyTest {
         System.out.println("总页数"+pageInfo.getPageSize());
         System.out.println("总条数"+pageInfo.getTotal());
         System.out.println("每页显示条数"+pageInfo.getPageSize());
+    }
+
+    @Test
+    public void mapperTest() throws IOException {
+        InputStream resourceAsStream = Resources.getResourceAsStream("sqlMapConfig.xml");
+        SqlSessionFactory build = new SqlSessionFactoryBuilder().build(resourceAsStream);
+        SqlSession sqlSession = build.openSession();
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        User user = new User();
+        user.setId(1);
+        //1.select方法
+        User user1 = mapper.selectOne(user);
+        System.out.println(user1);
+
+        //2.example方法
+        Example example = new Example(User.class);
+        example.createCriteria().andEqualTo("id", 2);
+        List<User> users = mapper.selectByExample(example);
+        for (User user2 : users) {
+            System.out.println(user2);
+        }
+
     }
 }
