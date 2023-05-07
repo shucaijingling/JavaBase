@@ -1,5 +1,7 @@
 package com.shucai.test;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.shucai.mapper.IOrderMapper;
 import com.shucai.mapper.IUserMapper;
 import com.shucai.muti.pojo.Order;
@@ -13,6 +15,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 public class MyTest {
 
@@ -56,15 +59,15 @@ public class MyTest {
     /**
      * 抽取创建sqlsession步骤
      */
-    private IUserMapper IUserMapper;
-    private IOrderMapper IOrderMapper;
+    private IUserMapper iUserMapper;
+    private IOrderMapper iOrderMapper;
     @Before
     public void createSqlSession() throws IOException {
         InputStream resourceAsStream = Resources.getResourceAsStream("sqlMapConfig.xml");
         SqlSessionFactory build = new SqlSessionFactoryBuilder().build(resourceAsStream);
         SqlSession sqlSession = build.openSession(true);
-        IUserMapper = sqlSession.getMapper(IUserMapper.class);
-        IOrderMapper = sqlSession.getMapper(IOrderMapper.class);
+        iUserMapper = sqlSession.getMapper(IUserMapper.class);
+        iOrderMapper = sqlSession.getMapper(IOrderMapper.class);
     }
 
     @Test
@@ -72,7 +75,7 @@ public class MyTest {
         User user = new User();
         user.setId(3);
         user.setUsername("insert data");
-        IUserMapper.insert(user);
+        iUserMapper.insert(user);
     }
 
     @Test
@@ -80,14 +83,14 @@ public class MyTest {
         User user = new User();
         user.setId(3);
         user.setUsername("update data");
-        IUserMapper.update(user);
+        iUserMapper.update(user);
     }
 
 
     @Test
     public void testAnnoSelect() {
 
-        for (User user : IUserMapper.selectAll()) {
+        for (User user : iUserMapper.selectAll()) {
             System.out.println(user);
         }
 
@@ -96,19 +99,19 @@ public class MyTest {
     @Test
     public void testAnnoDelete() {
 
-        IUserMapper.delete(3);
+        iUserMapper.delete(3);
     }
 
     @Test
     public void testAnnoSelectMuti(){
-        for (Order order : IOrderMapper.findOrderAndUser2()) {
+        for (Order order : iOrderMapper.findOrderAndUser2()) {
             System.out.println(order);
         }
     }
 
     @Test
     public void testAnnoSelectMutiUser(){
-        for (User user : IUserMapper.findAll2()) {
+        for (User user : iUserMapper.findAll2()) {
             System.out.println(user);
         }
 
@@ -116,9 +119,25 @@ public class MyTest {
 
     @Test
     public void testFindUserOrder(){
-        for (User user : IUserMapper.findUserAndRole2()) {
+        for (User user : iUserMapper.findUserAndRole2()) {
 
             System.out.println(user);
         }
+    }
+
+    @Test
+    public void pageHelperTest(){
+
+        PageHelper.startPage(1,1);
+        List<User> users = iUserMapper.selectAll();
+        for (User user : users) {
+            System.out.println(user);
+        }
+
+        PageInfo<User> pageInfo = new PageInfo<>(users);
+        System.out.println("当前页数"+pageInfo.getPageNum());
+        System.out.println("总页数"+pageInfo.getPageSize());
+        System.out.println("总条数"+pageInfo.getTotal());
+        System.out.println("每页显示条数"+pageInfo.getPageSize());
     }
 }

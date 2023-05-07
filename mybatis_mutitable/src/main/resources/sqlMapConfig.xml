@@ -10,6 +10,7 @@
     <!--开启二级缓存-->
     <settings>
         <setting name="cacheEnabled" value="true"/>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
     </settings>
 
     <!--给实体类的全限定类名给别名-->
@@ -19,6 +20,16 @@
         <!--批量起别名：该包下所有的类的本身的类名：别名还不区分大小写-->
         <package name="com.shucai.pojo"/>
     </typeAliases>
+
+    <plugins>
+<!--        <plugin interceptor="com.shucai.plugin.MyPlugin">-->
+<!--            <property name="cat" value="tanyuan"/>-->
+<!--        </plugin>-->
+        
+        <plugin interceptor="com.github.pagehelper.PageHelper">
+            <property name="dialect" value="mysql"/>
+        </plugin>
+    </plugins>
 
     <!--environments:运行环境-->
     <environments default="development">
