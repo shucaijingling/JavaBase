@@ -11,6 +11,7 @@
         <module name="IPersistence_test" />
         <module name="IPersistence" />
         <module name="mybatis_mutitable" />
+        <module name="mybatis" />
       </profile>
     </annotationProcessing>
   </component>
