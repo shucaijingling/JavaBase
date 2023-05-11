@@ -51,7 +51,7 @@ public class MapperProxy<T> implements InvocationHandler, Serializable {
      */
     private final Map<Method, MapperMethod> methodCache;
 
-    // 构造，传入了SqlSession，说明每个session中的代理对象的不同的！
+        // 构造，传入了SqlSession，说明每个session中的代理对象的不同的！
     public MapperProxy(SqlSession sqlSession, Class<T> mapperInterface, Map<Method, MapperMethod> methodCache) {
         this.sqlSession = sqlSession;
         this.mapperInterface = mapperInterface;

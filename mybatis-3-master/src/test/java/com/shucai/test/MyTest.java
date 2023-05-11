@@ -1,6 +1,7 @@
 package com.shucai.test;
 
 
+import com.lagou.mapper.IUserMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -28,5 +29,14 @@ public class MyTest {
         //   (2) 将查询任务委派给executor执行器
         //   (3) executor执行器将查询任务交给StatementHandler执行
         List<Object> objects = sqlSession.selectList("namespace.id");
+    }
+
+    @Test
+    public void test2() throws IOException {
+        InputStream inputStream = Resources.getResourceAsStream("sqlMapConfig.xml");
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        //使用JDK动态代理对mapper接口产生代理对象
+        IUserMapper mapper = sqlSession.getMapper(IUserMapper.class);
     }
 }
