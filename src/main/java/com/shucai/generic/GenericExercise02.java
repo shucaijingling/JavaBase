@@ -24,7 +24,6 @@ public class GenericExercise02 {
                     return i;
                 }
                 //名字相同，根据MyDate排序
-
                 return e1.getBirthday().compareTo(e2.getBirthday());
             }
         });
