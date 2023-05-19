@@ -72,18 +72,18 @@ class Agent implements Behavior {
 
     @Override
     public void method1() {
-        System.out.println("proxy method1");
+        System.out.println("dynamicProxy method1");
         agentMethod();
     }
 
     @Override
     public void method2() {
-        System.out.println("proxy method2");
+        System.out.println("dynamicProxy method2");
     }
 
     @Override
     public void method3() {
-        System.out.println("proxy method3");
+        System.out.println("dynamicProxy method3");
     }
 
     //被代理人完成的方法
@@ -94,12 +94,12 @@ class Agent implements Behavior {
 
     @Override
     public void method5() {
-        System.out.println("proxy method5");
+        System.out.println("dynamicProxy method5");
     }
 
     @Override
     public void method6() {
-        System.out.println("proxy method6");
+        System.out.println("dynamicProxy method6");
     }
 
 }
