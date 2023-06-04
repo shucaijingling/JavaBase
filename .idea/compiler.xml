@@ -11,6 +11,7 @@
         <module name="IPersistence_test" />
         <module name="IPersistence" />
         <module name="mybatis_mutitable" />
+        <module name="redis" />
         <module name="mybatis" />
       </profile>
     </annotationProcessing>
@@ -23,6 +24,7 @@
       <module name="IPersistence_test" options="-parameters" />
       <module name="java_base" options="" />
       <module name="mybatis_quickstart" options="-parameters" />
+      <module name="redis" options="-parameters" />
     </option>
   </component>
 </project>

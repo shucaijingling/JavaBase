@@ -25,7 +25,7 @@
 <!--        <plugin interceptor="com.shucai.plugin.MyPlugin">-->
 <!--            <property name="cat" value="tanyuan"/>-->
 <!--        </plugin>-->
-        
+
 <!--        <plugin interceptor="com.github.pagehelper.PageHelper">-->
 <!--            <property name="dialect" value="mysql"/>-->
 <!--        </plugin>-->

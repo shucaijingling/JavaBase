@@ -1,7 +1,7 @@
 package com.shucai.test;
 
-
 import com.lagou.mapper.IUserMapper;
+import com.lagou.pojo.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -38,5 +38,30 @@ public class MyTest {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         //使用JDK动态代理对mapper接口产生代理对象
         IUserMapper mapper = sqlSession.getMapper(IUserMapper.class);
+        for (User user : mapper.findAll()) {
+            System.out.println(user);
+        }
+    }
+
+    @Test
+    public void test3() throws IOException {
+        InputStream inputStream = Resources.getResourceAsStream("sqlMapConfig.xml");
+        SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+        SqlSession sqlSession1 = sessionFactory.openSession();
+        SqlSession sqlSession2 = sessionFactory.openSession();
+
+        User user1 = sqlSession1.selectOne("com.lagou.mapper.IUserMapper.findById", 1);
+        System.out.println(user1);
+        sqlSession1.commit();
+
+        User user = new User();
+        user.setId(1);
+        user.setUsername("jack");
+        //增删改查会清空二级缓存
+        sqlSession1.update("com.lagou.mapper.IUserMapper.updateById", user);
+
+        User user2 = sqlSession2.selectOne("com.lagou.mapper.IUserMapper.findById", 1);
+        System.out.println(user2);
     }
 }

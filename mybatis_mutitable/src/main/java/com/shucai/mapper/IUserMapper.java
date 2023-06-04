@@ -2,10 +2,11 @@ package com.shucai.mapper;
 
 import com.shucai.muti.pojo.User;
 import org.apache.ibatis.annotations.*;
+import org.mybatis.caches.redis.RedisCache;
 
 import java.util.List;
 
-@CacheNamespace //开启二级缓存
+@CacheNamespace(implementation = RedisCache.class) //开启二级缓存
 public interface IUserMapper {
 
     public List<User> findAll();
