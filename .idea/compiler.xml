@@ -9,10 +9,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="mybatis_quickstart" />
         <module name="IPersistence_test" />
-        <module name="IPersistence" />
+        <module name="design_patterm" />
         <module name="mybatis_mutitable" />
-        <module name="redis" />
+        <module name="mybatis-plus-simple" />
         <module name="mybatis" />
+        <module name="mybatis_plus_spring" />
+        <module name="IPersistence" />
+        <module name="redis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -22,7 +25,11 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="IPersistence_test" options="-parameters" />
+      <module name="design_patterm" options="-parameters" />
       <module name="java_base" options="" />
+      <module name="mybatis-plus" options="-parameters" />
+      <module name="mybatis-plus-simple" options="-parameters" />
+      <module name="mybatis_plus_spring" options="-parameters" />
       <module name="mybatis_quickstart" options="-parameters" />
       <module name="redis" options="-parameters" />
     </option>
