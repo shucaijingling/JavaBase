@@ -90,7 +90,7 @@ class MybatisPlusSpringbootApplicationTests {
 
     @Test
     void testDelete1() {
-        int i = userMapper.deleteById(10L);
+        int i = userMapper.deleteById(20L);
         System.out.println(i);
     }
 
