@@ -1,4 +1,4 @@
-package com.shucai_0515.reflection;
+package main.java.com.shucai_0515.reflection;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -17,7 +17,7 @@ public class Reflection02 {
     }
     //直接调用
     public static void m1() {
-        Cat c = new Cat();
+        com.shucai_0515.reflection.Cat c = new com.shucai_0515.reflection.Cat();
         long strat = System.currentTimeMillis();
         for (int i = 0; i < 900000000; i++) {
             c.hi();

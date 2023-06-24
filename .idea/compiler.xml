@@ -14,6 +14,7 @@
         <module name="mybatis-plus-simple" />
         <module name="mybatis" />
         <module name="mybatis_plus_spring" />
+        <module name="mybatis-plus-springboot" />
         <module name="IPersistence" />
         <module name="redis" />
       </profile>
@@ -29,6 +30,7 @@
       <module name="java_base" options="" />
       <module name="mybatis-plus" options="-parameters" />
       <module name="mybatis-plus-simple" options="-parameters" />
+      <module name="mybatis-plus-springboot" options="-parameters" />
       <module name="mybatis_plus_spring" options="-parameters" />
       <module name="mybatis_quickstart" options="-parameters" />
       <module name="redis" options="-parameters" />
