@@ -1,4 +1,4 @@
-package main.java.com.shucai_0515.reflection;
+package com.shucai_0515.reflection;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
