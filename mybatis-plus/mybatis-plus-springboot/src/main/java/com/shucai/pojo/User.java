@@ -29,6 +29,8 @@ public class User {
     @TableField(exist = false)
     private String address;
 
+    private String userName;
+
 //    @Override
 //    public String toString() {
 //        return "User{" +

@@ -178,6 +178,12 @@ class MybatisPlusSpringbootApplicationTests {
 
     }
 
+    @Test
+    void testSelect(){
+        User user = userMapper.selectById(16L);
+        System.out.println(user);
+    }
+
 
     /**
      * 随机生成中文名
