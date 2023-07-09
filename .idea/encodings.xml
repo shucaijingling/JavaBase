@@ -5,6 +5,8 @@
     <file url="file://$PROJECT_DIR$/IPersistence/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/IPersistence_test/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/IPersistence_test/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RMI/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RMI/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/design_patterm/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mybatis-3-master" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mybatis-3-master/src/main/java" charset="UTF-8" />
@@ -17,6 +19,11 @@
     <file url="file://$PROJECT_DIR$/mybatis_mutitable/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mybatis_quickstart/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/redis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shucai-rpc/shucai-rpc-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shucai-rpc/shucai-rpc-consumer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shucai-rpc/shucai-rpc-provider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shucai-rpc/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shucai-rpc/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../../maven-repository-javabase/org/springframework/boot/spring-boot-starter-parent/2.5.3/src/main/resources" charset="UTF-8" />

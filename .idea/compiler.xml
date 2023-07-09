@@ -8,15 +8,19 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="mybatis_quickstart" />
-        <module name="IPersistence_test" />
+        <module name="shucai-rpc-provider" />
         <module name="design_patterm" />
         <module name="mybatis_mutitable" />
         <module name="mybatis-plus-simple" />
         <module name="mybatis" />
-        <module name="mybatis_plus_spring" />
         <module name="mybatis-plus-springboot" />
         <module name="IPersistence" />
         <module name="redis" />
+        <module name="RMI" />
+        <module name="IPersistence_test" />
+        <module name="shucai-rpc-api" />
+        <module name="mybatis_plus_spring" />
+        <module name="shucai-rpc-consumer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -34,6 +38,9 @@
       <module name="mybatis_plus_spring" options="-parameters" />
       <module name="mybatis_quickstart" options="-parameters" />
       <module name="redis" options="-parameters" />
+      <module name="shucai-rpc-api" options="-parameters" />
+      <module name="shucai-rpc-consumer" options="-parameters" />
+      <module name="shucai-rpc-provider" options="-parameters" />
     </option>
   </component>
 </project>
