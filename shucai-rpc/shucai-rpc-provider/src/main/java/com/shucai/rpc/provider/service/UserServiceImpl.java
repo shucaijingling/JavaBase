@@ -2,12 +2,17 @@ package com.shucai.rpc.provider.service;
 
 import com.shucai.rpc.api.UserService;
 import com.shucai.rpc.pojo.User;
+import com.shucai.rpc.provider.anno.RpcService;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@RpcService
+@Service
 public class UserServiceImpl implements UserService {
     Map<Integer, User> userMap = new HashMap<>();
+
     @Override
     public User getById(int id) {
         if (userMap.size() == 0) {

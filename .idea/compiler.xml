@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="mybatis_quickstart" />
         <module name="shucai-rpc-provider" />
+        <module name="netty-demo" />
         <module name="design_patterm" />
         <module name="mybatis_mutitable" />
         <module name="mybatis-plus-simple" />

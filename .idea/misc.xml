@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/mybatis-plus/mybatis-plus-springboot/pom.xml" />
         <option value="$PROJECT_DIR$/RMI/pom.xml" />
         <option value="$PROJECT_DIR$/shucai-rpc/pom.xml" />
+        <option value="$PROJECT_DIR$/netty-demo/pom.xml" />
       </list>
     </option>
   </component>
