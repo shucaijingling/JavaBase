@@ -1,5 +1,6 @@
-package com.shucai.netty.test;
+package com.shucai.nio.test;
 
+import com.shucai.nio.c1.ByteBufferUtil;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
@@ -12,8 +13,6 @@ import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicInteger;
-
-import static com.shucai.netty.c1.ByteBufferUtil.debugAll;
 
 @SuppressWarnings({"all"})
 @Slf4j
@@ -107,7 +106,7 @@ public class MultiThreadServer {
                             log.debug("read ... " , channel.getRemoteAddress());
                             channel.read(buffer);
                             buffer.flip();
-                            debugAll(buffer);
+                            ByteBufferUtil.debugAll(buffer);
                         }
                     }
                 } catch (IOException e) {

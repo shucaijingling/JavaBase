@@ -1,4 +1,4 @@
-package com.shucai.netty.c1;
+package com.shucai.nio.c1;
 
 import io.netty.util.internal.MathUtil;
 import io.netty.util.internal.StringUtil;

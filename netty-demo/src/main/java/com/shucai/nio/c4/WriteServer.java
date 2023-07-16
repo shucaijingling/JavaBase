@@ -1,4 +1,4 @@
-package com.shucai.netty.c4;
+package com.shucai.nio.c4;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

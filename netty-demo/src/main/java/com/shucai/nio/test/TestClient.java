@@ -1,4 +1,4 @@
-package com.shucai.netty.test;
+package com.shucai.nio.test;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
