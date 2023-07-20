@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/RMI/pom.xml" />
         <option value="$PROJECT_DIR$/shucai-rpc/pom.xml" />
         <option value="$PROJECT_DIR$/netty-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/juc/pom.xml" />
       </list>
     </option>
   </component>
