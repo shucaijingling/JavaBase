@@ -19,6 +19,7 @@
         <module name="IPersistence" />
         <module name="redis" />
         <module name="RMI" />
+        <module name="eclipse" />
         <module name="IPersistence_test" />
         <module name="shucai-rpc-api" />
         <module name="mybatis_plus_spring" />
