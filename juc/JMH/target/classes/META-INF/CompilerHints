@@ -3,4 +3,8 @@ dontinline,*.*_avgt_jmhStub
 dontinline,*.*_sample_jmhStub
 dontinline,*.*_ss_jmhStub
 dontinline,*.*_thrpt_jmhStub
-inline,com/shucai/concurrent/jmh/JMHExample06.test
+inline,com/shucai/concurrent/jmh/JMHExample09.setUp
+inline,com/shucai/concurrent/jmh/JMHExample09.testConcurrentMap
+inline,com/shucai/concurrent/jmh/JMHExample09.testSynchronizeMap
+inline,com/shucai/concurrent/jmh/JMHExample10.setUp
+inline,com/shucai/concurrent/jmh/JMHExample10.test
