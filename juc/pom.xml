@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>JMH</module>
+        <module>heima</module>
     </modules>
 
     <properties>
