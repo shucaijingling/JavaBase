@@ -184,6 +184,22 @@ class MybatisPlusSpringbootApplicationTests {
         System.out.println(user);
     }
 
+    @Test
+    void testAllEq() {
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("name", "章伊亚");
+        map.put("age", 25);
+
+        wrapper.allEq(map);
+        List<User> users = userMapper.selectList(wrapper);
+        for (User user : users) {
+            System.out.println(user);
+        }
+
+    }
+
 
     /**
      * 随机生成中文名
