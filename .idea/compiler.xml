@@ -15,6 +15,7 @@
         <module name="mybatis_mutitable" />
         <module name="mybatis-plus-simple" />
         <module name="mybatis" />
+        <module name="heima" />
         <module name="mybatis-plus-springboot" />
         <module name="IPersistence" />
         <module name="redis" />
@@ -23,10 +24,10 @@
         <module name="shucai-rpc-api" />
         <module name="mybatis_plus_spring" />
         <module name="shucai-rpc-consumer" />
-        <module name="algorithm" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="algorithm" target="17" />
       <module name="demo" target="1.5" />
     </bytecodeTargetLevel>
   </component>
