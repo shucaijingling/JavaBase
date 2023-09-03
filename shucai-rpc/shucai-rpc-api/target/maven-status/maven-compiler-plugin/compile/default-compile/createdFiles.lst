@@ -1,0 +1,4 @@
+com/shucai/rpc/common/RpcResponse.class
+com/shucai/rpc/api/UserService.class
+com/shucai/rpc/pojo/User.class
+com/shucai/rpc/common/RpcRequest.class

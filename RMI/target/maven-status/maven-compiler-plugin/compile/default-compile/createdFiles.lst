@@ -1,0 +1,5 @@
+com/shucai/rmi/server/RMIServer.class
+com/shucai/rmi/client/RMIClient.class
+com/shucai/rmi/service/UserService.class
+com/shucai/rmi/pojo/User.class
+com/shucai/rmi/service/UserServiceImpl.class

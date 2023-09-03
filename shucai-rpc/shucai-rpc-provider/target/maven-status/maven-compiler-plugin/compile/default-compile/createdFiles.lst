@@ -1,0 +1,4 @@
+com/shucai/rpc/provider/service/UserServiceImpl.class
+com/shucai/rpc/provider/ServerBootstrapApplication.class
+com/shucai/rpc/provider/server/RpcServer.class
+com/shucai/rpc/provider/anno/RpcService.class
