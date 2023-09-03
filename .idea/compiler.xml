@@ -42,6 +42,7 @@
       <module name="mybatis_plus_spring" options="-parameters" />
       <module name="mybatis_quickstart" options="-parameters" />
       <module name="redis" options="-parameters" />
+      <module name="shucai" options="" />
       <module name="shucai-rpc-api" options="-parameters" />
       <module name="shucai-rpc-consumer" options="-parameters" />
       <module name="shucai-rpc-provider" options="-parameters" />

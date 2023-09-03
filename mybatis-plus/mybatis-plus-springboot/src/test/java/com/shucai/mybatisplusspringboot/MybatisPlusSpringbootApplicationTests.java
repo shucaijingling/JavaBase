@@ -12,7 +12,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -134,8 +140,8 @@ class MybatisPlusSpringbootApplicationTests {
     @Test
     void testSelectOne() {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
-//        wrapper.eq("name", "吕枝思");
-        wrapper.gt("age", "20");
+        wrapper.eq("name", "安昌成");
+//        wrapper.gt("age", "20");
 
         //只能查出一条，返回两条以上就会报错
         User user = userMapper.selectOne(wrapper);
@@ -165,16 +171,17 @@ class MybatisPlusSpringbootApplicationTests {
     @Test
     void testSelectPage() {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
+//        wrapper.eq("name", "严固之");
         wrapper.gt("age", 20);
 
         Page<User> page = new Page<>(1, 2);
 
         IPage<User> p = userMapper.selectPage(page, wrapper);
         System.out.println(p.getRecords());
-        System.out.println(p.getCurrent());
+        System.out.println("当前页："  + p.getCurrent());
         System.out.println(p.getSize());
-        System.out.println(p.getTotal());
-        System.out.println(p.getPages());
+        System.out.println("总条数：" + p.getTotal());
+        System.out.println("总页数：" +p.getPages());
 
     }
 
@@ -184,6 +191,114 @@ class MybatisPlusSpringbootApplicationTests {
         System.out.println(user);
     }
 
+    @Test
+    void testAllEq() {
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("name", "章伊亚");
+        map.put("age", 25);
+
+        wrapper.allEq(map);
+        List<User> users = userMapper.selectList(wrapper);
+        for (User user : users) {
+            System.out.println(user);
+        }
+
+    }
+
+    /**
+     * 条件查询
+     */
+    @Test
+    public void testWrapper() {
+        QueryWrapper<User> wrapper1 = new QueryWrapper<>();
+        wrapper1.eq("name", "陈勇毅")
+                .ge("age", 20)
+                .in("email", "xxx@test2.com", "xxx@test3.com");
+
+        User user = userMapper.selectOne(wrapper1);
+        System.out.println(user);
+    }
+
+
+    /**
+     * 模糊查询
+     */
+    @Test
+    public void testLikeWrapper() {
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.like("name", "天");
+
+        List<User> users = userMapper.selectList(wrapper);
+
+        //查询为空，mp底层处理结果集时也会创建一个list集合
+        for (User user12 : users) {
+            System.out.println(user12);
+        }
+
+    }
+
+    /**
+     * 条件查询
+     */
+    @Test
+    public void testConditionWrapper() {
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.orderByDesc("age");
+        List<User> users = userMapper.selectList(wrapper);
+        for (User user : users) {
+            System.out.println(user);
+        }
+
+        //and
+        QueryWrapper<User> and = new QueryWrapper<>();
+        and.eq("name", "严固之").eq("age", 24);
+        List<User> users1 = userMapper.selectList(and);
+        for (User user : users1) {
+            System.out.println(user);
+        }
+
+        //or
+        QueryWrapper<User> or = new QueryWrapper<>();
+        or.eq("name", "严固之").eq("age", 24);
+        List<User> usersOR = userMapper.selectList(or);
+        for (User user : usersOR) {
+            System.out.println(user);
+        }
+
+        //select()
+        QueryWrapper<User> select = new QueryWrapper<>();
+        select.eq("name", "严固之").eq("age", 24).select("name", "age");
+        for (User user : userMapper.selectList(select)) {
+            System.out.println(user);
+        }
+
+
+    }
+
+    /**
+     * 自定义findAll方法
+     */
+    @Test
+    public void testFindAll() {
+
+        List<User> all = userMapper.findAll();
+        for (User user : all) {
+            System.out.println(user);
+        }
+    }
+
+    @Test
+    public void testFill() {
+        User user = new User();
+        user.setId(17L);
+        user.setName("单排霸王龙");
+        user.setAge(99);
+
+        userMapper.insert(user);
+
+    }
 
     /**
      * 随机生成中文名

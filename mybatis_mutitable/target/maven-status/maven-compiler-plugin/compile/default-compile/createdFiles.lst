@@ -1,0 +1,10 @@
+com/shucai/mapper/IRoleMapper.class
+com/shucai/plugin/MyPlugin.class
+com/shucai/mapper/IUserMapper.class
+com/shucai/muti/pojo/User.class
+com/shucai/test/CacheTest.class
+com/shucai/muti/pojo/Order.class
+com/shucai/test/MyTest.class
+com/shucai/mapper/IOrderMapper.class
+com/shucai/mapper/UserMapper.class
+com/shucai/muti/pojo/Role.class
