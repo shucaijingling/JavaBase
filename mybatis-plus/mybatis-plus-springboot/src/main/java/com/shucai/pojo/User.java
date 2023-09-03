@@ -1,10 +1,8 @@
 package com.shucai.pojo;
 
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName("user")
-public class User {
+public class User extends Model<User> {
 
 
     @TableId(type = IdType.AUTO)
@@ -29,7 +27,11 @@ public class User {
     @TableField(exist = false)
     private String address;
 
+    @TableField(exist = false)
     private String userName;
+
+    @Version
+    private Integer version;
 
 //    @Override
 //    public String toString() {
