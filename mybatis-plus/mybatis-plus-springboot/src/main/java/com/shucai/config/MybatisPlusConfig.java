@@ -3,6 +3,7 @@ package com.shucai.config;
 
 import com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PerformanceInterceptor;
+import com.shucai.injector.MySqlInjector;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -38,5 +39,14 @@ public class MybatisPlusConfig {
     @Bean
     public OptimisticLockerInterceptor optimisticLockerInterceptor() {
         return new OptimisticLockerInterceptor();
+    }
+
+
+    /**
+     * 自定义sql注入器
+     */
+    @Bean
+    public MySqlInjector mySqlInjector() {
+        return new MySqlInjector();
     }
 }

@@ -31,6 +31,7 @@ public class User extends Model<User> {
     private String userName;
 
     @Version
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     private Integer version;
 
 //    @Override

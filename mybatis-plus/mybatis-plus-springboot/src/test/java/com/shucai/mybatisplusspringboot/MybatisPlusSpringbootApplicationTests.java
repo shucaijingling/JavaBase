@@ -271,6 +271,17 @@ class MybatisPlusSpringbootApplicationTests {
 
     }
 
+    /**
+     * 自定义findAll方法
+     */
+    @Test
+    public void testFindAll() {
+
+        List<User> all = userMapper.findAll();
+        for (User user : all) {
+            System.out.println(user);
+        }
+    }
 
     /**
      * 随机生成中文名
