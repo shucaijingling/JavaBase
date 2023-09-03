@@ -12,7 +12,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -281,6 +287,17 @@ class MybatisPlusSpringbootApplicationTests {
         for (User user : all) {
             System.out.println(user);
         }
+    }
+
+    @Test
+    public void testFill() {
+        User user = new User();
+        user.setId(17L);
+        user.setName("单排霸王龙");
+        user.setAge(99);
+
+        userMapper.insert(user);
+
     }
 
     /**
