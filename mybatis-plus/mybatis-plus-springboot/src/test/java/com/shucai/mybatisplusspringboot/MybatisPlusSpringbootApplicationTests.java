@@ -14,6 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -52,12 +53,17 @@ class MybatisPlusSpringbootApplicationTests {
 
     @Test
     void testInsert2() {
-        for (int i = 0; i < 10; i++) {
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.select("id");
+        List<User> users = userMapper.selectList(wrapper);
+        Long maxId = users.stream().max(Comparator.comparing(User::getId)).map(User::getId).orElseThrow(() -> new RuntimeException("error"));
+
+        for (long i = maxId; i < maxId + 10; i++) {
             User user = new User();
             String name = getName();
             String[] split = name.split("-");
             user.setName(split[1]);
-            user.setAge(i + 20);
+            user.setAge((int) (i + 20));
             user.setMail("xxx@test" + i + ".com");
             userMapper.insert(user);
         }
@@ -299,6 +305,25 @@ class MybatisPlusSpringbootApplicationTests {
         userMapper.insert(user);
 
     }
+
+    /**
+     * 逻辑删除
+     */
+    @Test
+    public void testLogicDelete() {
+        userMapper.deleteById(15L);
+    }
+
+    /**
+     * 逻辑删除后查询
+     */
+    @Test
+    public void testSelectAfterLogicDelete() {
+        User user = userMapper.selectById(15L);
+        System.out.println(user);
+    }
+
+
 
     /**
      * 随机生成中文名

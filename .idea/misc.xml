@@ -14,13 +14,14 @@
         <option value="$PROJECT_DIR$/netty-demo/pom.xml" />
         <option value="$PROJECT_DIR$/juc/pom.xml" />
         <option value="$PROJECT_DIR$/eclipse/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-generator/pom.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectResources">
     <resource url="http://ch.qos.logback/xml/ns/logback" location="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

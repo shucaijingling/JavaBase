@@ -21,6 +21,7 @@
         <module name="redis" />
         <module name="RMI" />
         <module name="IPersistence_test" />
+        <module name="mybatis-generator" />
         <module name="shucai-rpc-api" />
         <module name="mybatis_plus_spring" />
         <module name="shucai-rpc-consumer" />
@@ -36,6 +37,7 @@
       <module name="IPersistence_test" options="-parameters" />
       <module name="design_patterm" options="-parameters" />
       <module name="java_base" options="" />
+      <module name="mybatis-generator" options="-parameters" />
       <module name="mybatis-plus" options="-parameters" />
       <module name="mybatis-plus-simple" options="-parameters" />
       <module name="mybatis-plus-springboot" options="-parameters" />

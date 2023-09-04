@@ -34,6 +34,9 @@ public class User extends Model<User> {
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private Integer version;
 
+    @TableLogic
+    private Integer deleted;
+
 //    @Override
 //    public String toString() {
 //        return "User{" +

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/IPersistence/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/IPersistence/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/IPersistence_test/src/main/java" charset="UTF-8" />
@@ -18,6 +18,8 @@
     <file url="file://$PROJECT_DIR$/juc/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mybatis-3-master" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mybatis-3-master/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis-generator/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis-generator/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mybatis-plus/mybatis-plus-simple/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mybatis-plus/mybatis-plus-springboot/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mybatis-plus/mybatis_plus_spring/src/main/java" charset="UTF-8" />
@@ -36,6 +38,6 @@
     <file url="file://$PROJECT_DIR$/shucai-rpc/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../maven-repository-javabase/org/springframework/boot/spring-boot-starter-parent/2.5.3/src/main/resources" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
