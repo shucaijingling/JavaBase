@@ -16,12 +16,14 @@
         <module name="mybatis-plus-simple" />
         <module name="mybatis" />
         <module name="heima" />
+        <module name="lagou-transfer" />
         <module name="mybatis-plus-springboot" />
         <module name="IPersistence" />
         <module name="redis" />
         <module name="RMI" />
         <module name="IPersistence_test" />
         <module name="mybatis-generator" />
+        <module name="transfer" />
         <module name="shucai-rpc-api" />
         <module name="mybatis_plus_spring" />
         <module name="shucai-rpc-consumer" />
