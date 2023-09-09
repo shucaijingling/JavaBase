@@ -1,0 +1,4 @@
+package com.shucai.concurrent.atomicinteger.generated;
+public class SynchronizedVsLockVsAtomicInteger_atomicIntegerMonitor_jmhType extends SynchronizedVsLockVsAtomicInteger_atomicIntegerMonitor_jmhType_B3 {
+}
+

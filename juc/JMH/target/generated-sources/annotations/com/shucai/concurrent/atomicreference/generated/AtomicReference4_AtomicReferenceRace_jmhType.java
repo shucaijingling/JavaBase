@@ -1,0 +1,4 @@
+package com.shucai.concurrent.atomicreference.generated;
+public class AtomicReference4_AtomicReferenceRace_jmhType extends AtomicReference4_AtomicReferenceRace_jmhType_B3 {
+}
+
