@@ -3,6 +3,7 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/shucai-spring/lagou-transfer" />
+    <file type="web" url="file://$PROJECT_DIR$/shucai-spring/transfer" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">

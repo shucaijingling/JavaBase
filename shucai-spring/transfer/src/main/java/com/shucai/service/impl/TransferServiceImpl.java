@@ -1,15 +1,15 @@
 package com.shucai.service.impl;
 
 import com.shucai.dao.AccountDao;
-import com.shucai.dao.impl.JdbcAccountDaoImpl;
+import com.shucai.factory.BeanFactory;
 import com.shucai.pojo.Account;
 import com.shucai.service.TransferService;
 
 public class TransferServiceImpl implements TransferService {
 
-    private AccountDao accountDao = new JdbcAccountDaoImpl();
+//    private AccountDao accountDao = new JdbcAccountDaoImpl();
 
-
+    private AccountDao accountDao = (AccountDao) BeanFactory.getBean("accountDao");
     @Override
     public void transfer(String fromCardNo, String toCardNo, int money) throws Exception {
 

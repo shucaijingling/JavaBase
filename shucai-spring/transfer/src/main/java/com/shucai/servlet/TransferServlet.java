@@ -1,8 +1,8 @@
 package com.shucai.servlet;
 
+import com.shucai.factory.BeanFactory;
 import com.shucai.pojo.Result;
 import com.shucai.service.TransferService;
-import com.shucai.service.impl.TransferServiceImpl;
 import com.shucai.utils.JsonUtils;
 
 import javax.servlet.ServletException;
@@ -15,8 +15,9 @@ import java.io.IOException;
 @WebServlet(name="transferServlet",urlPatterns = "/transferServlet")
 public class TransferServlet extends HttpServlet {
 
-    private TransferService transferService = new TransferServiceImpl();
+//    private TransferService transferService = new TransferServiceImpl();
 
+    private TransferService transferService = (TransferService) BeanFactory.getBean("transferService");
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
