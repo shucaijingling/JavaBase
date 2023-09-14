@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<beans>
+    <!--全限定类名-->
+    <bean id="accountDao" class="com.shucai.dao.impl.JdbcAccountDaoImpl"></bean>
+
+    <bean id="transferService" class="com.shucai.service.impl.TransferServiceImpl"></bean>
+
+</beans>
