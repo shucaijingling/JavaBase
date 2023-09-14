@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="mybatis_quickstart" />
+        <module name="xuyi-spring" />
         <module name="shucai-rpc-provider" />
         <module name="netty-demo" />
         <module name="JMH" />
