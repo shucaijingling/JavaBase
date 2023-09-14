@@ -8,14 +8,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="mybatis_quickstart" />
-        <module name="xuyi-spring" />
         <module name="shucai-rpc-provider" />
         <module name="netty-demo" />
         <module name="JMH" />
         <module name="design_patterm" />
         <module name="mybatis_mutitable" />
         <module name="mybatis-plus-simple" />
+        <module name="xuyi-spring-step-01" />
         <module name="mybatis" />
+        <module name="xuyi-spring-step-02" />
         <module name="heima" />
         <module name="lagou-transfer" />
         <module name="mybatis-plus-springboot" />
