@@ -9,27 +9,30 @@
         <outputRelativeToContentRoot value="true" />
         <module name="mybatis_quickstart" />
         <module name="xuyi-spring-step-03" />
-        <module name="shucai-rpc-provider" />
-        <module name="netty-demo" />
-        <module name="JMH" />
+        <module name="xuyi-spring-step-04" />
+        <module name="xuyi-spring-step-05" />
+        <module name="xuyi-spring-step-06" />
         <module name="design_patterm" />
         <module name="mybatis_mutitable" />
-        <module name="mybatis-plus-simple" />
         <module name="xuyi-spring-step-01" />
         <module name="mybatis" />
         <module name="xuyi-spring-step-02" />
         <module name="heima" />
-        <module name="lagou-transfer" />
         <module name="mybatis-plus-springboot" />
-        <module name="IPersistence" />
         <module name="redis" />
-        <module name="RMI" />
-        <module name="IPersistence_test" />
         <module name="mybatis-generator" />
-        <module name="transfer" />
         <module name="shucai-rpc-api" />
         <module name="mybatis_plus_spring" />
         <module name="shucai-rpc-consumer" />
+        <module name="shucai-rpc-provider" />
+        <module name="netty-demo" />
+        <module name="JMH" />
+        <module name="mybatis-plus-simple" />
+        <module name="lagou-transfer" />
+        <module name="IPersistence" />
+        <module name="RMI" />
+        <module name="IPersistence_test" />
+        <module name="transfer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

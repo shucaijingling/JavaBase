@@ -1,0 +1,49 @@
+.
+├── pom.xml
+├── src
+│   └── main
+│       ├── java
+│       │   └── com
+│       │       └── xuyi
+│       │           └── springframework
+│       │               ├── beans
+│       │               │   ├── BeansException.java
+│       │               │   ├── PropertyValue.java
+│       │               │   ├── PropertyValues.java
+│       │               │   └── factory
+│       │               │       ├── BeanFactory.java
+│       │               │       ├── config
+│       │               │       │   ├── BeanDefinition.java
+│       │               │       │   ├── BeanFactoryPostProcessor.java
+│       │               │       │   ├── BeanPostProcessor.java
+│       │               │       │   ├── BeanReference.java
+│       │               │       │   └── SingletonBeanRegistry.java
+│       │               │       ├── support
+│       │               │       │   ├── AbstractAutowireCapableBeanFactory.java
+│       │               │       │   ├── AbstractBeanFactory.java
+│       │               │       │   ├── BeanDefinitionRegistry.java
+│       │               │       │   ├── CglibSubclassInstantiationStrategy.java
+│       │               │       │   ├── DefaultListableBeanFactory.java
+│       │               │       │   ├── DefaultSingletonBeanRegistry.java
+│       │               │       │   ├── InstantiationStrategy.java
+│       │               │       │   └── SimpleInstantiationStrategy.java
+│       │               │       └── xml
+│       │               ├── context
+│       │               │   └── ApplicationContext.java
+│       │               ├── core.io
+│       │               │   ├── ClasspathResource.java
+│       │               │   ├── DefaultResourceLoader.java
+│       │               │   ├── FileSystemResource.java
+│       │               │   ├── Resource.java
+│       │               │   ├── ResourceLoader.java
+│       │               │   └── UrlResource.java
+│       │               └── utils
+│       │                   └── ClassUtils.java
+│       └── resources
+├── step06.txt
+└── target
+    ├── classes
+    └── generated-sources
+        └── annotations
+
+20 directories, 27 files
