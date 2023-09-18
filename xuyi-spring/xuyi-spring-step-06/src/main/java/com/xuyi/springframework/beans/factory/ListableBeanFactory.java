@@ -1,5 +1,7 @@
 package com.xuyi.springframework.beans.factory;
 
+import com.xuyi.springframework.beans.BeansException;
+
 import java.util.Map;
 
 public interface ListableBeanFactory extends BeanFactory{
@@ -10,7 +12,7 @@ public interface ListableBeanFactory extends BeanFactory{
      * @return
      * @param <T>
      */
-    <T> Map<String, T> getBeansOfType(Class<T> type);
+    <T> Map<String, T> getBeansOfType(Class<T> type) throws BeansException;
 
 
     String[] getBeanDefinitionNames();

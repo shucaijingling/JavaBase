@@ -1,5 +1,7 @@
 package com.xuyi.springframework.beans.factory.config;
 
+import com.xuyi.springframework.beans.factory.ConfigurableListableBeanFactory;
+
 /**
  * beanFactory后置处理器
  */

@@ -1,4 +1,6 @@
 package com.xuyi.springframework.context;
 
-public interface ApplicationContext extends ListableBeanFactory{
+import com.xuyi.springframework.beans.factory.ListableBeanFactory;
+
+public interface ApplicationContext extends ListableBeanFactory {
 }

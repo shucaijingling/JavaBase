@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+
+    <bean id="userDao" class="com.xuyi.springframework.test.beans.UserDao"/>
+
+    <bean id="userService" class="com.xuyi.springframework.test.beans.UserService">
+        <property name="uid" value="10001"/>
+        <property name="company" value="阿里"/>
+        <property name="location" value="上海"/>
+        <property name="userDao" ref="userDao"/>
+    </bean>
+
+</beans>

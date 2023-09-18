@@ -1,6 +1,6 @@
 package com.xuyi.springframework.beans;
 
-public class BeansException extends Exception{
+public class BeansException extends RuntimeException{
 
     public BeansException() {
     }

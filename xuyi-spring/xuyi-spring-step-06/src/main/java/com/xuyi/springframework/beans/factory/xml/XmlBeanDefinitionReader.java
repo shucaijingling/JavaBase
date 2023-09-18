@@ -12,7 +12,6 @@ import com.xuyi.springframework.core.io.Resource;
 import com.xuyi.springframework.core.io.ResourceLoader;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import java.io.IOException;
@@ -34,7 +33,11 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
     @Override
     public void loadBeanDefinitions(Resource resource) throws IOException {
         InputStream inputStream = resource.getInputStream();
-        doLoadBeanDefinitions(inputStream);
+        try {
+            doLoadBeanDefinitions(inputStream);
+        } catch (ClassNotFoundException | BeansException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
@@ -46,10 +49,17 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
     }
 
     @Override
-    public void loadBeanDefinition(String location) throws IOException {
+    public void loadBeanDefinitions(String location) throws IOException {
         ResourceLoader resourceLoader = getResourceLoader();
         Resource resource = resourceLoader.getResource(location);
         loadBeanDefinitions(resource);
+    }
+
+    @Override
+    public void loadBeanDefinitions(String... locations) throws IOException {
+        for (String location : locations) {
+            loadBeanDefinitions(location);
+        }
     }
 
     /**
@@ -82,12 +92,12 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 
             //解析属性
             BeanDefinition beanDefinition = new BeanDefinition(clz);
-            for (int j = 0; j < childNodes.getLength(); j++) {
+            for (int j = 0; j < bean.getChildNodes().getLength(); j++) {
 
-                if (!(childNodes.item(j) instanceof Element)) continue;
-                if (!"property".equals(childNodes.item(j).getNodeName())) continue;
+                if (!(bean.getChildNodes().item(j) instanceof Element)) continue;
+                if (!"property".equals(bean.getChildNodes().item(j).getNodeName())) continue;
 
-                Element property = (Element) childNodes.item(j);
+                Element property = (Element) bean.getChildNodes().item(j);
                 String attrName = property.getAttribute("name");
                 String attrValue = property.getAttribute("value");
                 String attrRef = property.getAttribute("ref");

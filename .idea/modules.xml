@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/shucai.iml" filepath="$PROJECT_DIR$/shucai.iml" />
-      <module fileurl="file://$PROJECT_DIR$/xuyi-spring-step-05.iml" filepath="$PROJECT_DIR$/xuyi-spring-step-05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xuyi-spring/xuyi-spring-step-06/xuyi-spring-step-06.iml" filepath="$PROJECT_DIR$/xuyi-spring/xuyi-spring-step-06/xuyi-spring-step-06.iml" />
     </modules>
   </component>
 </project>
