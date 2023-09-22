@@ -19,6 +19,7 @@
         <module name="xuyi-spring-step-02" />
         <module name="heima" />
         <module name="mybatis-plus-springboot" />
+        <module name="xuyi-spring-step-07" />
         <module name="redis" />
         <module name="mybatis-generator" />
         <module name="shucai-rpc-api" />
