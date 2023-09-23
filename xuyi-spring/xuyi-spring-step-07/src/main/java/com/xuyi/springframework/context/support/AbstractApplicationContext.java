@@ -6,12 +6,13 @@ import com.xuyi.springframework.beans.factory.config.BeanPostProcessor;
 import com.xuyi.springframework.context.ConfigurableApplicationContext;
 import com.xuyi.springframework.core.io.DefaultResourceLoader;
 
+import java.io.IOException;
 import java.util.Map;
 
 public abstract class AbstractApplicationContext extends DefaultResourceLoader implements ConfigurableApplicationContext {
 
     @Override
-    public void refresh() {
+    public void refresh() throws IOException {
 
         //1. 创建BeanFactory, 加载 BeanDefinition
         refreshBeanFactory();
@@ -45,7 +46,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader i
 
     protected abstract ConfigurableListableBeanFactory getBeanFactory();
 
-    protected abstract void refreshBeanFactory();
+    protected abstract void refreshBeanFactory() throws IOException;
 
 
     @Override

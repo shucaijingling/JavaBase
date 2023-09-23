@@ -1,5 +1,7 @@
 package com.xuyi.springframework.context.support;
 
+import java.io.IOException;
+
 public class ClasspathXmlApplicationContext extends AbstractXmlApplicationContext {
 
     private String[] configLocations;
@@ -7,11 +9,11 @@ public class ClasspathXmlApplicationContext extends AbstractXmlApplicationContex
     public ClasspathXmlApplicationContext() {
     }
 
-    public ClasspathXmlApplicationContext(String configLocations) {
+    public ClasspathXmlApplicationContext(String configLocations) throws IOException {
         this(new String[]{configLocations});
     }
 
-    public ClasspathXmlApplicationContext(String[] configLocations) {
+    public ClasspathXmlApplicationContext(String[] configLocations) throws IOException {
         this.configLocations = configLocations;
         refresh();
     }
