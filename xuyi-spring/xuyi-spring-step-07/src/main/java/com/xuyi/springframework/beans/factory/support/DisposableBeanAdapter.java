@@ -3,6 +3,7 @@ package com.xuyi.springframework.beans.factory.support;
 import cn.hutool.core.util.StrUtil;
 import com.xuyi.springframework.beans.BeansException;
 import com.xuyi.springframework.beans.factory.DisposableBean;
+import com.xuyi.springframework.beans.factory.config.BeanDefinition;
 
 import java.lang.reflect.Method;
 
@@ -14,10 +15,10 @@ public class DisposableBeanAdapter implements DisposableBean {
 
     private String destroyMethodName;
 
-    public DisposableBeanAdapter(String beanName, Object bean, String destroyMethodName) {
+    public DisposableBeanAdapter(String beanName, Object bean, BeanDefinition beanDefinition) {
         this.beanName = beanName;
         this.bean = bean;
-        this.destroyMethodName = destroyMethodName;
+        this.destroyMethodName = beanDefinition.getDestroyMethodName();
     }
 
     @Override
