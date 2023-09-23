@@ -16,6 +16,7 @@
         <module>xuyi-spring-step-05</module>
         <module>xuyi-spring-step-06</module>
         <module>xuyi-spring-step-07</module>
+        <module>xuyi-spring-strp-08</module>
     </modules>
 
     <properties>
