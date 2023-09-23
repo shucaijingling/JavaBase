@@ -30,6 +30,7 @@
         <module name="JMH" />
         <module name="mybatis-plus-simple" />
         <module name="lagou-transfer" />
+        <module name="xuyi-spring-strp-08" />
         <module name="IPersistence" />
         <module name="RMI" />
         <module name="IPersistence_test" />

@@ -26,7 +26,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader i
         registerBeanPostProcessors(beanFactory);
 
         //5. 提前实例化单例Bean
-        beanFactory.preInstantiateSingleton();
+        beanFactory.preInstantiateSingletons();
     }
 
     private void registerBeanPostProcessors(ConfigurableListableBeanFactory beanFactory) {
