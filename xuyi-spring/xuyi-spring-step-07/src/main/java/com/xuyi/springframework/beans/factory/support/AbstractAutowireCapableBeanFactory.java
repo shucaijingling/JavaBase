@@ -5,9 +5,11 @@ import cn.hutool.core.util.StrUtil;
 import com.xuyi.springframework.beans.BeansException;
 import com.xuyi.springframework.beans.PropertyValue;
 import com.xuyi.springframework.beans.PropertyValues;
+import com.xuyi.springframework.beans.factory.DisposableBean;
 import com.xuyi.springframework.beans.factory.InitializingBean;
 import com.xuyi.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import com.xuyi.springframework.beans.factory.config.BeanDefinition;
+import com.xuyi.springframework.beans.factory.config.BeanPostProcessor;
 import com.xuyi.springframework.beans.factory.config.BeanReference;
 
 import java.lang.reflect.Constructor;
@@ -27,8 +29,16 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
         } catch (Exception e) {
             throw new BeansException("AbstractAutowireCapableBeanFactory createBean failed");
         }
+        registerDisposableBeanIfNecessary(beanName, bean, beanDefinition);
+
         addSingleton(beanName, bean);
         return bean;
+    }
+
+    private void registerDisposableBeanIfNecessary(String beanName, Object bean, BeanDefinition beanDefinition) {
+        if (bean instanceof DisposableBean || StrUtil.isNotEmpty(beanDefinition.getDestroyMethodName())) {
+            registerDisposableBean(beanName, new DisposableBeanAdapter(beanName, bean, beanDefinition));
+        }
     }
 
     private Object initializeBean(String beanName, Object bean, BeanDefinition beanDefinition) {
@@ -55,7 +65,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 
         //2. 注解配置 init-method 【避免二次初始化】
         String initMethodName = beanDefinition.getInitMethodName();
-        if (StrUtil.isNotEmpty(initMethodName) && !(bean instanceof InitializingBean)) {
+        if (StrUtil.isNotEmpty(initMethodName) && !(bean instanceof InitializingBean && StrUtil.equals("afterPropertiesSet", initMethodName))) {
 
             Method initMethod = beanDefinition.getBeanClass().getMethod(initMethodName);
 
@@ -100,12 +110,24 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 
     @Override
     public Object applyBeanPostProcessorBeforeInitializationBean(Object existingBean, String beanName) {
-        return null;
+        Object result = existingBean;
+        for (BeanPostProcessor beanPostProcessor : getBeanPostProcessors()) {
+            Object currentBean = beanPostProcessor.postProcessorBeforeInitialization(result, beanName);
+            if (null == currentBean) return result;
+            result = currentBean;
+        }
+        return result;
     }
 
     @Override
     public Object applyBeanPostProcessorAfterInitializationBean(Object existingBean, String beanName) {
-        return null;
+        Object result = existingBean;
+        for (BeanPostProcessor beanPostProcessor : getBeanPostProcessors()) {
+            Object current = beanPostProcessor.postProcessorAfterInitialization(result, beanName);
+            if (null == current) return result;
+            result = current;
+        }
+        return result;
     }
 
     public InstantiationStrategy getInstantiationStrategy() {

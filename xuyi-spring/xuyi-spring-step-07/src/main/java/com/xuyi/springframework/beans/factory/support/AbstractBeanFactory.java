@@ -45,4 +45,8 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
         beanPostProcessors.remove(processor);
         beanPostProcessors.add(processor);
     }
+
+    public List<BeanPostProcessor> getBeanPostProcessors() {
+        return this.beanPostProcessors;
+    }
 }
