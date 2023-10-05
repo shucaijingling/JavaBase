@@ -2,5 +2,5 @@ package com.xuyi.springframework.beans.factory;
 
 public interface DisposableBean {
 
-    void destroy();
+    void destroy() throws Exception;
 }
