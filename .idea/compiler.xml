@@ -35,6 +35,7 @@
         <module name="RMI" />
         <module name="IPersistence_test" />
         <module name="transfer" />
+        <module name="interview" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
