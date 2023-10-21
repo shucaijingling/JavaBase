@@ -12,7 +12,6 @@
         <module name="xuyi-spring-step-04" />
         <module name="xuyi-spring-step-05" />
         <module name="xuyi-spring-step-06" />
-        <module name="design_patterm" />
         <module name="mybatis_mutitable" />
         <module name="xuyi-spring-step-01" />
         <module name="mybatis" />
@@ -25,6 +24,11 @@
         <module name="shucai-rpc-api" />
         <module name="mybatis_plus_spring" />
         <module name="shucai-rpc-consumer" />
+        <module name="d03-1" />
+        <module name="d03-0" />
+        <module name="d01-1" />
+        <module name="d02-0" />
+        <module name="d01-0" />
         <module name="shucai-rpc-provider" />
         <module name="netty-demo" />
         <module name="JMH" />
@@ -41,12 +45,18 @@
     <bytecodeTargetLevel>
       <module name="algorithm" target="17" />
       <module name="demo" target="1.5" />
+      <module name="designpattern" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="IPersistence_test" options="-parameters" />
-      <module name="design_patterm" options="-parameters" />
+      <module name="d01-0" options="-parameters" />
+      <module name="d01-1" options="-parameters" />
+      <module name="d02-0" options="-parameters" />
+      <module name="d03-0" options="-parameters" />
+      <module name="d03-1" options="-parameters" />
+      <module name="design_patterm" options="" />
       <module name="java_base" options="" />
       <module name="mybatis-generator" options="-parameters" />
       <module name="mybatis-plus" options="-parameters" />

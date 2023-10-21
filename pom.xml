@@ -12,6 +12,7 @@
         <module>redis</module>
         <module>design_patterm</module>
         <module>mybatis-plus</module>
+        <module>design_patterm/d03-1</module>
     </modules>
 
     <parent>

@@ -7,16 +7,10 @@
         <groupId>com.shucai</groupId>
         <artifactId>shucai</artifactId>
         <version>1.0</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>design_patterm</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>d01-0</module>
-        <module>d01-1</module>
-        <module>d02-0</module>
-        <module>d03-0</module>
-    </modules>
+    <artifactId>d03-1</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

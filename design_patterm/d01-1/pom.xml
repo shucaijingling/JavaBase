@@ -5,18 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.shucai</groupId>
-        <artifactId>shucai</artifactId>
+        <artifactId>design_patterm</artifactId>
         <version>1.0</version>
     </parent>
 
-    <artifactId>design_patterm</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>d01-0</module>
-        <module>d01-1</module>
-        <module>d02-0</module>
-        <module>d03-0</module>
-    </modules>
+    <artifactId>d01-1</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
