@@ -10,10 +10,17 @@
     </parent>
 
     <artifactId>design_patterm</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>d01-0</module>
+        <module>d01-1</module>
+        <module>d02-0</module>
+        <module>d03-0</module>
+    </modules>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
