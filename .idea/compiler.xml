@@ -25,6 +25,7 @@
         <module name="shucai-rpc-api" />
         <module name="mybatis_plus_spring" />
         <module name="shucai-rpc-consumer" />
+        <module name="algorithm" />
         <module name="shucai-rpc-provider" />
         <module name="netty-demo" />
         <module name="JMH" />
@@ -39,7 +40,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="algorithm" target="17" />
       <module name="demo" target="1.5" />
     </bytecodeTargetLevel>
   </component>
