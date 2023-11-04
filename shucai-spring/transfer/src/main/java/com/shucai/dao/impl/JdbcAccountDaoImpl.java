@@ -2,7 +2,7 @@ package com.shucai.dao.impl;
 
 import com.shucai.dao.AccountDao;
 import com.shucai.pojo.Account;
-import com.shucai.utils.DruidUtils;
+import com.shucai.utils.ConnectionUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,11 +11,17 @@ import java.sql.ResultSet;
 public class JdbcAccountDaoImpl implements AccountDao {
 
 
+    private ConnectionUtils connectionUtils;
+
+    public void setConnectionUtils(ConnectionUtils connectionUtils) {
+        this.connectionUtils = connectionUtils;
+    }
 
     @Override
     public Account queryAccountByCardNo(String cardNo) throws Exception {
 
-        Connection con = DruidUtils.getInstance().getConnection();
+//        Connection con = DruidUtils.getInstance().getConnection();
+        Connection con = connectionUtils.getCurrentConn();
         String sql = "select * from account where cardNo=?";
         PreparedStatement preparedStatement = con.prepareStatement(sql);
         preparedStatement.setString(1, cardNo);
@@ -29,20 +35,21 @@ public class JdbcAccountDaoImpl implements AccountDao {
         }
         resultSet.close();
         preparedStatement.close();
-        con.close();
+//        con.close();
         return account;
     }
 
     @Override
     public int updateAccountByCardNo(Account account) throws Exception {
-        Connection con = DruidUtils.getInstance().getConnection();
+//        Connection con = DruidUtils.getInstance().getConnection();
+        Connection con = connectionUtils.getCurrentConn();
         String sql = "update account set money=? where cardNo=?";
         PreparedStatement preparedStatement = con.prepareStatement(sql);
         preparedStatement.setInt(1, account.getMoney());
         preparedStatement.setString(2, account.getCardNo());
         int i = preparedStatement.executeUpdate();
         preparedStatement.close();
-        con.close();
+//        con.close();
         return i;
     }
 }

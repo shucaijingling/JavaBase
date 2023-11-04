@@ -20,12 +20,17 @@
         <option value="$PROJECT_DIR$/eclipse/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis-generator/pom.xml" />
         <option value="$PROJECT_DIR$/shucai-spring/pom.xml" />
-        <option value="$PROJECT_DIR$/shucai-spring/lagou-transfer/pom.xml" />
         <option value="$PROJECT_DIR$/shucai-spring/transfer/pom.xml" />
         <option value="$PROJECT_DIR$/xuyi-spring/pom.xml" />
         <option value="$PROJECT_DIR$/interview/pom.xml" />
         <option value="$PROJECT_DIR$/algorithm/pom.xml" />
+        <option value="$PROJECT_DIR$/shucai-spring/other/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/xuyi-spring/other/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectResources">
