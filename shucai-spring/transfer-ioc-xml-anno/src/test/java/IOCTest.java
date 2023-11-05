@@ -28,4 +28,25 @@ public class IOCTest {
         System.out.println(testBean4);
 
     }
+
+    @Test
+    public void lazy() {
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
+
+        Object lazyResult = context.getBean("lazyResult");
+        System.out.println(lazyResult);
+
+        context.close();
+    }
+
+
+    @Test
+    public void test_FactoryBean() {
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
+        Object companyBean = context.getBean("companyBean");
+        System.out.println(companyBean);
+
+        Object bean = context.getBean("&companyBean");
+        System.out.println(bean);
+    }
 }

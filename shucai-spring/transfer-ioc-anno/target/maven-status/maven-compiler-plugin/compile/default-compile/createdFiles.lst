@@ -12,8 +12,8 @@ com/shucai/pojo/TestBean4.class
 com/shucai/utils/TransactionManager.class
 com/shucai/singleton/HungrySingleton.class
 com/shucai/pojo/TestBean.class
-com/shucai/service/impl/TransferServiceImpl.class
 com/shucai/servlet/TransferServlet.class
+com/shucai/service/impl/TransferServiceImpl.class
 com/shucai/factory/CreateBeanFactory.class
 com/shucai/SpringConfig.class
 com/shucai/utils/JsonUtils.class

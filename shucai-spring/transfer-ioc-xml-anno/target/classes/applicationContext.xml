@@ -21,4 +21,10 @@
         <property name="password" value="${jdbc.password}"/>
     </bean>
 
+    <bean id="lazyResult" class="com.shucai.pojo.Result" init-method="initMethod"
+    destroy-method="destroyMethod"/>
+
+    <bean id="companyBean" class="com.shucai.factory.CompanyFactoryBean">
+        <property name="companyInfo" value="shucai,Shanghai,666"/>
+    </bean>
 </beans>
