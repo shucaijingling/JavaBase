@@ -1,5 +1,7 @@
 package book.k.code.linkedlist;
 
+import book.k.code.ListNode;
+
 public class Linked_list {
 
     public static void main(String[] args) {

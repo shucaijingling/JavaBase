@@ -2,6 +2,7 @@ package book.k.code.list;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class List {
     public static void main(String[] args) {
@@ -43,6 +44,11 @@ public class List {
         //删除元素
         list.remove(3);
         System.out.println("删除元素： -> ");
+        System.out.println(list);
+
+        java.util.List<Integer> list2 = new ArrayList<>(Arrays.asList(new Integer[]{6, 8, 7, 10, 9}));
+        list.addAll(list2);
+        Collections.sort(list);
         System.out.println(list);
     }
 }
