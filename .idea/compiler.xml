@@ -30,6 +30,7 @@
         <module name="d03-0" />
         <module name="d01-1" />
         <module name="d02-0" />
+        <module name="transfer-ioc-anno" />
         <module name="d01-0" />
         <module name="algorithm" />
         <module name="shucai-rpc-provider" />
@@ -41,6 +42,7 @@
         <module name="RMI" />
         <module name="IPersistence_test" />
         <module name="transfer" />
+        <module name="transfer-ioc-xml-anno" />
         <module name="interview" />
       </profile>
     </annotationProcessing>
