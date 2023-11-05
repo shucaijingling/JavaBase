@@ -4,6 +4,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/shucai-spring/lagou-transfer" />
     <file type="web" url="file://$PROJECT_DIR$/shucai-spring/transfer" />
+    <file type="web" url="file://$PROJECT_DIR$/shucai-spring/transfer-iocxml" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -25,6 +26,7 @@
         <option value="$PROJECT_DIR$/interview/pom.xml" />
         <option value="$PROJECT_DIR$/algorithm/pom.xml" />
         <option value="$PROJECT_DIR$/shucai-spring/other/pom.xml" />
+        <option value="$PROJECT_DIR$/shucai-spring/transfer-iocxml/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

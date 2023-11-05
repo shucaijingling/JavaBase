@@ -13,6 +13,7 @@
         <module name="xuyi-spring-step-05" />
         <module name="other" />
         <module name="xuyi-spring-step-06" />
+        <module name="transfer-iocxml" />
         <module name="mybatis_mutitable" />
         <module name="xuyi-spring-step-01" />
         <module name="mybatis" />

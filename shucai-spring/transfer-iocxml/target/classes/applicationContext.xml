@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--全限定类名-->
+    <bean id="accountDao" class="com.shucai.dao.impl.JdbcAccountDaoImpl">
+        <property name="ConnectionUtils" ref="connectionUtils"></property>
+    </bean>
+
+    <bean id="transferService" class="com.shucai.service.impl.TransferServiceImpl">
+        <property name="AccountDao" ref="accountDao"></property>
+    </bean>
+
+    <!--1. 无参构造-->
+    <bean id="connectionUtils" class="com.shucai.utils.ConnectionUtils"></bean>
+
+    <bean id="transactionManager" class="com.shucai.utils.TransactionManager">
+        <property name="ConnectionUtils" ref="connectionUtils"></property>
+    </bean>
+
+    <bean id="proxyFactory" class="com.shucai.factory.ProxyFactory">
+        <property name="TransactionManager" ref="transactionManager"></property>
+    </bean>
+
+    <!--2. 静态方法-->
+    <bean id="testBean" class="com.shucai.factory.CreateBeanFactory" factory-method="getStaticInstance"></bean>
+
+    <!--3. 实例化对象-->
+    <bean id="createBeanFactory" class="com.shucai.factory.CreateBeanFactory"></bean>
+    <bean id="testBean2" factory-bean="createBeanFactory" factory-method="getInstance"></bean>
+
+    <bean id="testBean3" class="com.shucai.pojo.TestBean3">
+        <property name="name" value="xuyi"></property>
+        <property name="age" value="18"></property>
+        <property name="money" value="66.66"></property>
+    </bean>
+
+    <bean id="testBean4" class="com.shucai.pojo.TestBean4">
+        <constructor-arg index="0" ref="testBean3"></constructor-arg>
+        <constructor-arg name="name" value="shucai"></constructor-arg>
+        <constructor-arg index="2" value="66.666"></constructor-arg>
+
+        <property name="list">
+            <array>
+                <value>list1</value>
+                <value>list2</value>
+                <value>list3</value>
+            </array>
+        </property>
+
+        <property name="map">
+            <map>
+                <entry key="k1" value="v1"/>
+                <entry key="k2" value="v2"/>
+                <entry key="k3" value="v3"/>
+            </map>
+        </property>
+
+        <property name="set">
+            <set>
+                <value>s1</value>
+                <value>s2</value>
+                <value>s3</value>
+            </set>
+        </property>
+
+
+        <property name="pros">
+            <props>
+                <prop key="p1">v1</prop>
+                <prop key="p2">v2</prop>
+            </props>
+        </property>
+    </bean>
+
+</beans>
