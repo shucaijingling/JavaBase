@@ -1,6 +1,7 @@
 package com.shucai.servlet;
 
 import com.shucai.factory.BeanFactory;
+import com.shucai.factory.ProxyFactory;
 import com.shucai.pojo.Result;
 import com.shucai.service.TransferService;
 import com.shucai.utils.JsonUtils;
@@ -12,12 +13,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name="transferServlet",urlPatterns = "/transferServlet")
+@WebServlet(name = "transferServlet", urlPatterns = "/transferServlet")
 public class TransferServlet extends HttpServlet {
 
 //    private TransferService transferService = new TransferServiceImpl();
 
-    private TransferService transferService = (TransferService) BeanFactory.getBean("transferService");
+//    private TransferService transferService = (TransferService) BeanFactory.getBean("transferService");
+    ProxyFactory proxyFactory = (ProxyFactory) BeanFactory.getBean("proxyFactory");
+
+    private TransferService transferService = (TransferService) proxyFactory.getJdkProxy(BeanFactory.getBean("transferService"));
+
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

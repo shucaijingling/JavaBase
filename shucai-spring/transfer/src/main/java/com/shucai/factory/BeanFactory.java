@@ -6,6 +6,8 @@ import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
 import java.io.InputStream;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,9 +44,31 @@ public class BeanFactory {
                 //保存到map
                 map.put(id, o);
             }
+
+            // 检查哪些对象需要传值
+            List<Element> properties = rootElement.selectNodes("//property");
+            for (int i = 0; i < properties.size(); i++) {
+//                <property name="AccountDao" ref="accountDao"></property>
+                Element element = properties.get(i);
+                String name = element.attributeValue("name");
+                String ref = element.attributeValue("ref");
+
+//                <bean id="transferService" class="com.shucai.service.impl.TransferServiceImpl">
+                Element parent = element.getParent();
+                String parentId = parent.attributeValue("id");
+                Object o = map.get(parentId);
+                for (Method declaredMethod : o.getClass().getDeclaredMethods()) {
+                    if (declaredMethod.getName().equalsIgnoreCase("set" + name)) {
+                        declaredMethod.invoke(o, map.get(ref));
+                    }
+                }
+                map.put(parentId, o);
+            }
+
+
         } catch (DocumentException | ClassNotFoundException e) {
             e.printStackTrace();
-        } catch (InstantiationException | IllegalAccessException e) {
+        } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
             throw new RuntimeException(e);
         }
     }

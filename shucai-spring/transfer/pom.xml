@@ -9,13 +9,19 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <packaging>war</packaging>
 
     <dependencies>
+        <!--cglib-->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>3.3.0</version>
+        </dependency>
         <!-- 单元测试Junit -->
         <dependency>
             <groupId>junit</groupId>
