@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
@@ -29,6 +30,7 @@
             <option value="$PROJECT_DIR$/../spring-framework-5.3.10/spring-orm" />
             <option value="$PROJECT_DIR$/../spring-framework-5.3.10/spring-oxm" />
             <option value="$PROJECT_DIR$/../spring-framework-5.3.10/spring-r2dbc" />
+            <option value="$PROJECT_DIR$/../spring-framework-5.3.10/spring-slf-shucai" />
             <option value="$PROJECT_DIR$/../spring-framework-5.3.10/spring-test" />
             <option value="$PROJECT_DIR$/../spring-framework-5.3.10/spring-tx" />
             <option value="$PROJECT_DIR$/../spring-framework-5.3.10/spring-web" />

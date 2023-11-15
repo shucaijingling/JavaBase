@@ -47,9 +47,6 @@
         <module name="interview" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="lagou-transfer" target="11" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -69,7 +66,6 @@
       <module name="mybatis_quickstart" options="-parameters" />
       <module name="other" options="" />
       <module name="redis" options="-parameters" />
-      <module name="shucai" options="" />
       <module name="shucai-rpc-api" options="-parameters" />
       <module name="shucai-rpc-consumer" options="-parameters" />
       <module name="shucai-rpc-provider" options="-parameters" />

@@ -1,6 +1,7 @@
 import com.shucai.dao.AccountDao;
 import com.shucai.pojo.TestBean3;
 import com.shucai.pojo.TestBean4;
+import com.shucai.service.TransferService;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -48,5 +49,15 @@ public class IOCTest {
 
         Object bean = context.getBean("&companyBean");
         System.out.println(bean);
+    }
+
+    /**
+     * xml aop
+     */
+    @Test
+    public void test_Aop() throws Exception {
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
+        TransferService bean = context.getBean(TransferService.class);
+        bean.transfer("6029621011000", "6029621011001",100);
     }
 }

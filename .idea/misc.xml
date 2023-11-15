@@ -7,6 +7,7 @@
     <file type="web" url="file://$PROJECT_DIR$/shucai-spring/transfer-ioc-anno" />
     <file type="web" url="file://$PROJECT_DIR$/shucai-spring/transfer-ioc-xml-anno" />
     <file type="web" url="file://$PROJECT_DIR$/shucai-spring/transfer-iocxml" />
+    <file type="web" url="file://$PROJECT_DIR$/../spring-framework-5.3.10" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">

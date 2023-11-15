@@ -11,18 +11,23 @@ public class TransferServiceImpl implements TransferService {
 
     @Autowired
     private AccountDao accountDao;
+
     @Override
     public void transfer(String fromCardNo, String toCardNo, int money) throws Exception {
 
-            Account from = accountDao.queryAccountByCardNo(fromCardNo);
-            Account to = accountDao.queryAccountByCardNo(toCardNo);
 
-            from.setMoney(from.getMoney() - money);
-            to.setMoney(to.getMoney() + money);
+        System.out.println("执行转账业务逻辑");
 
-            accountDao.updateAccountByCardNo(to);
+        Account from = accountDao.queryAccountByCardNo(fromCardNo);
+        Account to = accountDao.queryAccountByCardNo(toCardNo);
+
+        from.setMoney(from.getMoney() - money);
+        to.setMoney(to.getMoney() + money);
+
+        accountDao.updateAccountByCardNo(to);
 //            int i = 1 / 0;
-            accountDao.updateAccountByCardNo(from);
+        accountDao.updateAccountByCardNo(from);
+        System.out.println("transfer done ...");
 
 
     }
