@@ -1,0 +1,13 @@
+server:
+  port: 8081
+
+
+dubbo:
+  application:
+    name: lottery
+    version: 1.0.0
+  registry:
+    address: N/A
+  protocol:
+    name: dubbo
+    port: 20880

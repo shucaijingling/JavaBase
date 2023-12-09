@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7f9f8a8b-1205-48a3-a1b3-09ca0adebb31" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Lottery-Test/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lottery-Test/src/test/java/com/shucai/lottery/test/Api.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RMI/src/main/java/com/shucai/local/client/RMIClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RMI/src/main/java/com/shucai/local/pojo/UserInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RMI/src/main/java/com/shucai/local/server/RMIServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RMI/src/main/java/com/shucai/local/service/IUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RMI/src/main/java/com/shucai/local/service/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my-netty/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my-netty/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my-netty/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my-netty/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my-netty/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my-netty/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my-netty/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my-netty/src/main/java/com/shucai/netty/chat/demo/ChatMessageDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my-netty/src/main/java/com/shucai/netty/chat/demo/ChatMessageEncoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my-netty/src/main/java/com/shucai/netty/chat/demo/client/ChatClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my-netty/src/main/java/com/shucai/netty/chat/demo/client/ChatClientHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my-netty/src/main/java/com/shucai/netty/chat/demo/server/ChatServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my-netty/src/main/java/com/shucai/netty/chat/demo/server/ChatServerHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my-netty/src/main/java/com/shucai/netty/chat/http/HttpServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my-netty/src/main/java/com/shucai/netty/chat/http/HttpServerHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my-netty/src/main/java/com/shucai/netty/chat/multi/ChatClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my-netty/src/main/java/com/shucai/netty/chat/multi/ChatClientHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my-netty/src/main/java/com/shucai/netty/chat/multi/ChatServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my-netty/src/main/java/com/shucai/netty/chat/multi/ChatServerHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my-netty/src/main/java/com/shucai/netty/demo/client/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my-netty/src/main/java/com/shucai/netty/demo/client/ClientHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/css/chat.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/img/arrow_right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/img/bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/img/close.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/img/hongbao.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/img/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/img/my.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/img/my.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/img/pager.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/img/pager_bgc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/img/paper.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/img/smile.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/img/spelling.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/img/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/js/chat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/js/common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/js/jquery-2.2.0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/js/jquery.1.7.2.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/js/jquery.tag-editor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/static/css/chat.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/static/img/arrow_right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/static/img/bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/static/img/close.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/static/img/hongbao.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/static/img/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/static/img/my.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/static/img/my.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/static/img/pager.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/static/img/pager_bgc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/static/img/paper.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/static/img/smile.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/static/img/spelling.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/static/img/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/static/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/static/js/chat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/static/js/common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/static/js/jquery-2.2.0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/static/js/jquery.1.7.2.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/static/js/jquery.tag-editor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../netty-chat/src/main/resources/templates/chat.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shucai-api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shucai-api/src/main/java/com/shucai/rpc/api/IUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shucai-api/src/main/java/com/shucai/rpc/common/RpcRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shucai-api/src/main/java/com/shucai/rpc/common/RpcResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shucai-api/src/main/java/com/shucai/rpc/pojo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shucai-consumer/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shucai-provider/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shucai-provider/src/main/java/com/shucai/rpc/provider/ServerBootstrapApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shucai-provider/src/main/java/com/shucai/rpc/provider/anno/RpcService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shucai-provider/src/main/java/com/shucai/rpc/provider/server/RpcServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shucai-provider/src/main/java/com/shucai/rpc/provider/service/UserServiceImpl.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="AnnotationType" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="$PROJECT_DIR$/../rpc-repo" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="$PROJECT_DIR$/../../apache-maven-3.6.3/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2ZAjrff5FpviWEaukce0ZzcVI8Q" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.shucai.rpc.pojo" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7f9f8a8b-1205-48a3-a1b3-09ca0adebb31" name="Changes" comment="" />
+      <created>1701871978043</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1701871978043</updated>
+      <workItem from="1701871979121" duration="1012000" />
+      <workItem from="1702099427498" duration="2542000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
